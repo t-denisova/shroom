@@ -1,0 +1,59 @@
+@import './helper_mixins';
+
+$heading-01: (
+    font-family: 'Rubik Mono One',
+    font-size: rem(28px),
+    line-height: rem(36px),
+    font-weight: 400
+) !default;
+
+$label: (
+    font-family: 'Montserrat',
+    font-size: rem(12px),
+    line-height: rem(16px),
+    font-weight: 400
+) !default;
+
+$body: (
+    font-family: 'Montserrat',
+    font-size: rem(14px),
+    line-height: rem(16px),
+    font-weight: 400
+) !default;
+
+$heading: (
+    font-family: 'Montserrat',
+    font-size: rem(22px),
+    line-height: rem(26px),
+    font-weight: 400
+) !default;
+
+$helper-text: (
+    font-family: 'Montserrat',
+    font-size: rem(12px),
+    line-height: rem(16px),
+    font-weight: 400
+) !default;
+
+$tokens: (
+    label: $label,
+    body: $body,
+    heading: $heading,
+    helper-text: $helper-text
+);
+
+
+@mixin properties($map) {
+	@each $name, $value in $map {
+		#{$name}: $value;
+	}
+}
+
+@mixin type-style($name) {
+    @if not map-has-key($tokens, $name) {
+        @warn "Property '#{name}' does not exist"
+    }
+
+	$token: map-get($tokens, $name);
+	@include properties($token);
+}

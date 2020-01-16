@@ -1,0 +1,78 @@
+@import '../../scss/spacing';
+
+.app--header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $spacing-5xl;
+    background-color: #221F20;
+    z-index: 6000; //header
+    border-bottom: 1px solid #221F20;
+}
+
+.app--header__name {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 $spacing-2xl;
+    margin: 0 $spacing-xl 0 $spacing-5xl;
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+    color: white;
+    border: 2px solid transparent;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 32px;
+}
+
+.app--header__name:focus {
+    border-color: white;
+}
+
+.app--header__nav {
+    height: 100%;
+}
+
+.app--header__menu-bar {
+    display: flex;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.app--header__menu-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 $spacing-2xl;
+    text-decoration: none;
+    color: white;
+    border: 2px solid transparent;
+}
+
+.app--header__menu-item:hover {
+    background-color: gray;
+}
+
+.app--header__menu-item:focus {
+    border-color: white;
+}
+
+.app--header__actions {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 1 0%;
+    height: 100%;
+}
+
+.app--header__action {
+    height: $spacing-5xl;
+}
+
+.app--header__action:hover {
+    background-color: gray;
+}

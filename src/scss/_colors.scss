@@ -1,0 +1,11 @@
+$interactive-primary: #00BB49 !default;
+$ui-background: #fff;
+$field: #f3f3f3 !default;
+$text-01: #221F20 !default;
+$text-03: #00BB49 !default;
+$text-04: #fff !default;
+$ui-02: #00BB49 !default;
+$support-01: #da1e28 !default;
+$focus: #00BB49 !default;
+$hover-primary: darken($interactive-primary, 10%) !default;
+$active-primary: darken($interactive-primary, 15%) !default;

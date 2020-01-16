@@ -1,0 +1,46 @@
+@import './helper_mixins';
+
+$base-unit-size: 8px !default;
+
+@function base-units($count) {
+	@return rem($base-unit-size * $count);
+}
+
+/// 0.125rem (2px)
+$spacing-2xs: base-units(0.25) !default;
+
+/// 0.25rem (4px)
+$spacing-xs: base-units(0.5) !default;
+
+/// 0.5rem (8px)
+$spacing-x: base-units(1) !default;
+
+/// 0.75rem (12px)
+$spacing-xl: base-units(1.5) !default;
+
+/// 1rem (16px)
+$spacing-2xl: base-units(2) !default;
+
+/// 1.5rem (24px)
+$spacing-3xl: base-units(3) !default;
+
+/// 2rem (32px)
+$spacing-4xl: base-units(4) !default;
+
+/// 2.5rem (40px)
+$spacing-5xl: base-units(5) !default;
+
+/// 3rem (48px)
+$spacing-6xl: base-units(6) !default;
+
+/// 3.5rem (56px)
+$spacing-7xl: base-units(7) !default;
+
+/// 4rem (64px)
+$spacing-8xl: base-units(8) !default;
+
+/// 5rem (80px)
+$spacing-10xl: base-units(10) !default;
+
+/// 6rem (96px)
+$spacing-12xl: base-units(12) !default;

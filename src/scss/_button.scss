@@ -1,0 +1,91 @@
+
+@mixin button-base {
+    @include type-style('body');
+  
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    min-height: rem(40px);
+    padding: $spacing-x;
+    border-radius: rem(4px);
+    text-decoration: none;
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    position: relative;
+    border-width: 2px;
+}
+
+@mixin button-theme(
+  $bg-color,
+  $border-color,
+  $font-color,
+  $hover-bg-color,
+  $active-color
+) {
+  background-color: $bg-color;
+  border-style: solid;
+  border-color: $border-color;
+  color: $font-color;
+
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+
+  &:focus {
+    border-color: $focus;
+    outline-color: $ui-02;
+  }
+
+  &:active {
+    background-color: $active-color;
+  }
+}
+
+.app--btn {
+    @include button-base;
+}
+
+.app--btn::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+.app--btn--primary {
+    @include button-theme(
+        $interactive-primary,
+        transparent,
+        $text-04,
+        $hover-primary,
+        $active-primary
+    );
+
+    &:hover {
+        color: $text-04;
+    }
+  }
+
+.app--btn--secondary {
+    @include button-theme(
+        transparent,
+        $interactive-primary,
+        $text-03,
+        $hover-primary,
+        $active-primary,
+    );
+
+    &:hover {
+        color: $text-04;
+    }
+
+    &:focus {
+        color: $text-04;
+        background-color: $interactive-primary;
+    }
+
+    &:active {
+        color: $text-04;
+        background-color: $active-primary;
+    }
+  }

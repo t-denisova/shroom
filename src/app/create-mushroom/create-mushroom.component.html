@@ -1,0 +1,67 @@
+<form *ngIf="!changesSaved" (ngSubmit)="onSaveMushroom(f)" #f="ngForm"> 
+    <fieldset class="app--fieldset">
+        <legend class="app--label">Тип грибка</legend>
+        <div class="app--radio-button-group">
+            <div class="app--radio-button-wrapper">
+                <input
+                    id="radio-button-lm5n7wbo8g-1"
+                    class="app--radio-button"
+                    type="radio"
+                    [(ngModel)]="classification"
+                    name="classification"
+                    value="edible"
+                    required>
+                <label for="radio-button-lm5n7wbo8g-1" class="app--radio-button__label">Съедобный</label>
+            </div>
+            <div class="app--radio-button-wrapper">
+                <input
+                    id="radio-button-lm5n7wbo8g-2"
+                    class="app--radio-button"
+                    type="radio"
+                    [(ngModel)]="classification"
+                    name="classification"
+                    value="inedible"
+                    required>
+                <label for="radio-button-lm5n7wbo8g-2" class="app--radio-button__label">Несъедобный</label>
+            </div>
+        </div>
+    </fieldset>
+    <div class="app--form-item">
+        <label for="name" class="app--label">Имя грибка</label>
+        <input
+            type="text"
+            id="name"
+            [(ngModel)]="name"
+            name="name"
+            required
+            #mushroomName="ngModel"
+            class="app--text-input">
+        <span
+            *ngIf="!mushroomName.valid && mushroomName.touched"
+            class="app--form-requirement">Придумайте имя грибку</span>
+    </div> 
+    <div class="app--form-item">
+        <label for="imagePath" class="app--label">Добавьте картину грибка через URL</label>
+        <input
+            type="text"
+            id="imagePath"
+            placeholder="https://"
+            [(ngModel)]="imagePath"
+            name = imagePath
+            required
+            #mushroomImage="ngModel"
+            class="app--text-input">
+        <span
+            *ngIf="!mushroomImage.valid && mushroomImage.touched"
+            class="app--form-requirement">Добавьте картинку</span>
+    </div> 
+    <img src="{{ imagePath }}" class="app--selected-image">
+    <button class="app--btn app--btn--primary" type="submit" [disabled] = "!f.valid">Сохранить грибок</button>
+</form>
+
+<div *ngIf="changesSaved">
+    <p>Вы создали чудесный грибок</p>
+    <img src="{{ mushroom.imagePath }}" alt="" class="app--selected-image">
+    <p>{{ mushroom.name }}</p>
+    <button class="app--btn app--btn--primary" (click)="onMakeMushroom()">Создать еще грибок</button>
+</div>
