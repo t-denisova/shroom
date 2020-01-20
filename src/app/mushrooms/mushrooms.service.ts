@@ -1,22 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Mushroom } from './mushroom.model';
 import { map } from 'rxjs/operators';
-
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class MushroomsService {
+    error = new Subject<string>();
 
     constructor(private http: HttpClient) {}
 
     createAndStoreMushroom(mushroomInfo: {classification: string, name: string, imagePath: string}) {
         const mushroomData: Mushroom = mushroomInfo;
         this.http
-            .post(
+            .post<{ name: string }>(
                 'https://shroom-265311.firebaseio.com/mushrooms.json',
                 mushroomData
             ).subscribe(responseData => {
                 console.log(responseData);
+            }, error => {
+              this.error.next(error.message);
             });
     }
 

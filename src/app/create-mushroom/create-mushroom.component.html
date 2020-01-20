@@ -58,6 +58,7 @@
     <img src="{{ imagePath }}" class="app--selected-image">
     <button class="app--btn app--btn--primary" type="submit" [disabled] = "!f.valid">Сохранить грибок</button>
 </form>
+<p *ngIf="error">Ошибка {{ error }}</p>
 
 <div *ngIf="changesSaved">
     <p>Вы создали чудесный грибок</p>

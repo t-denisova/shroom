@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { MushroomsService } from '../mushrooms/mushrooms.service';
 import { NgForm } from '@angular/forms';
@@ -11,7 +11,7 @@ import { Mushroom } from '../mushrooms/mushroom.model';
   templateUrl: './create-mushroom.component.html',
   styleUrls: ['./create-mushroom.component.scss']
 })
-export class CreateMushroomComponent implements OnInit, CanDeactivateGuard {
+export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDestroy {
   @ViewChild('f', {static: false}) createMushroomForm: NgForm;
   mushroom: Mushroom = {
     classification: '',
@@ -19,10 +19,16 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard {
     imagePath: ''
   }
   changesSaved = false;
+  error = null;
+  private errorSub: Subscription;
 
   constructor(private mushroomsService: MushroomsService, private http: HttpClient) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.errorSub = this.mushroomsService.error.subscribe(errorMessage => {
+      this.error = errorMessage;
+    });
+  }
 
   onSaveMushroom(form: NgForm) {
     this.changesSaved = true;
@@ -43,5 +49,9 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard {
     } else {
       return true;
     }
+  }
+
+  ngOnDestroy() {
+    this.errorSub.unsubscribe();
   }
 }

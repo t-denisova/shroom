@@ -6,4 +6,5 @@
     <p>{{ mushroom.name }}</p>
     <button class="app--btn app--btn--secondary">Положить в лукошко</button>
 </div>
-<p *ngIf="isFetching">Загрузка...</p>
+<p *ngIf="isFetching && !error">Загрузка...</p>
+<p *ngIf="error">Ошибка {{ error }}</p>

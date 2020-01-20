@@ -14,6 +14,7 @@ export class MushroomsComponent implements OnInit {
   classification: string;
   loadedMushrooms: Mushroom[] = [];
   isFetching = false;
+  error = null;
 
   constructor(private route: ActivatedRoute, private mushroomsService: MushroomsService, private http: HttpClient) { }
 
@@ -25,6 +26,8 @@ export class MushroomsComponent implements OnInit {
         this.mushroomsService.fetchMushrooms(this.classification).subscribe(mushrooms => {
           this.isFetching = false;
           this.loadedMushrooms = mushrooms;
+        }, error => {
+          this.error = error.message;
         });
       }
     );
