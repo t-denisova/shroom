@@ -1,0 +1,38 @@
+<div *ngIf="error">
+    <p>{{ error }}</p>
+</div>
+<div *ngIf="isLoading">
+    <app-loading></app-loading>
+</div>
+<form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+    <div>
+        <label for="email">Логин</label>
+        <input
+            type="email"
+            id="login"
+            ngModel
+            name="email"
+            required>
+    </div>
+    <div>
+        <label for="password">Пароль</label>
+        <input
+            type="password"
+            id="password"
+            ngModel
+            name="password"
+            required
+            minlength="6">
+    </div>
+    <div>
+        <button
+            class="app--btn app--btn--primary"
+            type="submit"
+            [disabled]="!authForm.valid">{{ isLogingMode ? 'Войти' : 'Регистрация' }}</button>
+        <button
+            class="app--btn app--btn--primary"
+            (click)="onSwitchMode()"
+            type="button"
+            >{{ isLogingMode ? 'Регистрация' : 'Войти' }}</button>
+    </div>
+</form>

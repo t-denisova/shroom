@@ -1,0 +1,20 @@
+.app--loading {
+    // @include animation__loading--spin;
+    width: 40px;
+    height: 40px;
+}
+
+.app--loading__svg {
+    fill: transparent;
+}
+
+.app--loading__svg circle {
+    stroke-width: 8;
+    stroke-linecap: butt;
+    stroke-dasharray: 240;
+}
+
+.app--loading__stroke {
+    stroke: green;
+    stroke-dashoffset: white;
+}
