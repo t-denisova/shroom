@@ -27,6 +27,7 @@ export class MushroomsComponent implements OnInit {
           this.isFetching = false;
           this.loadedMushrooms = mushrooms;
         }, error => {
+          this.isFetching = false;
           this.error = error.message;
         });
       }
