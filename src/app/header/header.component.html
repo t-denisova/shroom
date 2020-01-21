@@ -18,12 +18,22 @@
                 <a
                     [routerLink]="['/create-mushroom']"
                     class="app--header__menu-item"
+                    *ngIf="isAuthenticated"
                     >Создать гриб</a>
             </li>
         </ul>
     </nav>
     <div class="app--header__actions">
-        <button class="app--header__action app--btn" [routerLink]="['/login']">Войти</button>
-        <button class="app--header__action app--btn" [routerLink]="['/signup']">Зарегистрироваться</button>
+        <button
+            class="app--header__action app--btn"
+            [routerLink]="['/login']" 
+            *ngIf="!isAuthenticated">Войти</button>
+        <button
+            class="app--header__action app--btn"
+            [routerLink]="['/signup']"
+            *ngIf="!isAuthenticated">Зарегистрироваться</button>
+        <button
+            class="app--header__action app--btn"
+            *ngIf="isAuthenticated">Выйти</button>
     </div>
-</header>
+</header> 
