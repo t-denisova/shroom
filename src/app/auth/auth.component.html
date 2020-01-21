@@ -1,3 +1,4 @@
+<h1>{{ logingMode }}</h1>
 <div *ngIf="error">
     <p>{{ error }}</p>
 </div>
@@ -28,11 +29,6 @@
         <button
             class="app--btn app--btn--primary"
             type="submit"
-            [disabled]="!authForm.valid">{{ isLogingMode ? 'Войти' : 'Регистрация' }}</button>
-        <button
-            class="app--btn app--btn--primary"
-            (click)="onSwitchMode()"
-            type="button"
-            >{{ isLogingMode ? 'Регистрация' : 'Войти' }}</button>
+            [disabled]="!authForm.valid">Продолжить</button>
     </div>
 </form>

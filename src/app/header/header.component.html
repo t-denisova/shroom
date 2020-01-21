@@ -23,8 +23,7 @@
         </ul>
     </nav>
     <div class="app--header__actions">
-        <button class="app--header__action app--btn" [routerLink]="['/auth']">Авторизоваться</button>
-        <button class="app--header__action app--btn" (click)="onLogin()">Зайти</button>
-        <button class="app--header__action app--btn" (click)="onLogout()">Выйти</button>
+        <button class="app--header__action app--btn" [routerLink]="['/login']">Войти</button>
+        <button class="app--header__action app--btn" [routerLink]="['/signup']">Зарегистрироваться</button>
     </div>
 </header>

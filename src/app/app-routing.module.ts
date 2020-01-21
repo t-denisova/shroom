@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'mushrooms/:classification', component: MushroomsComponent },
   { path: 'create-mushroom', canActivate: [AuthGuardService], component: CreateMushroomComponent, canDeactivate: [CanDeactivateGuard] },
-  { path: 'auth', component: AuthComponent },
+  { path: 'login', component: AuthComponent },
+  { path: 'signup', component: AuthComponent },
   { path: 'not-found', component: PageNotFoundComponent }, //error?
   { path: '**', redirectTo: '/not-found' }
 ];
