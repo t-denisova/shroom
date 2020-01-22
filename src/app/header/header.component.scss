@@ -10,7 +10,7 @@
     height: $spacing-5xl;
     background-color: #221F20;
     z-index: 6000; //header
-    border-bottom: 1px solid #221F20;
+    border-bottom: 1px solid gray;
 }
 
 .app--header__name {
@@ -71,8 +71,24 @@
 
 .app--header__action {
     height: $spacing-5xl;
+    border: 2px solid transparent;
+    background-color: transparent;
+    color: white;
 }
-
 .app--header__action:hover {
     background-color: gray;
+}
+.app--header__action:active {
+    background-color: gray;
+    color: #fff;
+}
+.app--header__action:focus {
+    border-color: #ffffff;
+    outline: none;
+}
+
+.app--header__action--active {
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 2px solid #221F20;
 }

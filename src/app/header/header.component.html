@@ -27,16 +27,21 @@
     </nav>
     <div class="app--header__actions">
         <button
-            class="app--header__action app--btn"
+            class="app--header__action"
             [routerLink]="['/login']" 
             *ngIf="!isAuthenticated">Войти</button>
         <button
-            class="app--header__action app--btn"
+            class="app--header__action"
             [routerLink]="['/signup']"
             *ngIf="!isAuthenticated">Зарегистрироваться</button>
         <button
-            class="app--header__action app--btn"
+            class="app--header__action"
             *ngIf="isAuthenticated"
             (click)="onLogout()">Выйти</button>
+        <button
+            class="app--header__action"
+            *ngIf="isAuthenticated"
+            appSwitcher
+            >Лукошко</button>
     </div>
-</header> 
+</header>

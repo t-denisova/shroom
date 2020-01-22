@@ -1,0 +1,16 @@
+@import '../../scss/spacing';
+@import '../../scss/colors';
+
+.app--panel {
+    position: fixed;
+    top: $spacing-5xl;
+    right: 0;
+    bottom: 0;
+    width: rem(300px);
+    background-color: #221F20;
+    display: none;
+}
+
+.app--panel--expanded {
+    display: block;
+}

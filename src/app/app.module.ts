@@ -16,6 +16,8 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { AuthInterceptorService } from './auth/auth-interseptor.service';
+import { PanelComponent } from './panel/panel.component';
+import { SwitcherDirective } from './header/switcher.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AuthInterceptorService } from './auth/auth-interseptor.service';
     PageNotFoundComponent,
     MushroomsComponent,
     AuthComponent,
-    LoadingComponent
+    LoadingComponent,
+    PanelComponent,
+    SwitcherDirective
   ],
   imports: [
     BrowserModule,
