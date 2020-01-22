@@ -1,0 +1,11 @@
+<div class="app--inline-notification">
+    <div class="app--inline-notification__details">
+        <div class="app--inline-notification__text-wrapper">
+          <p class="app--inline-notification__title">{{ title }}</p>
+          <p class="app--inline-notification__subtitle">{{ subtitle }}</p>
+        </div>
+    </div>
+    <button class="app--inline-notification__close-button" (click)="onClose()" type="button">
+      <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="app--inline-notification__close-icon" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
+    </button>
+  </div>

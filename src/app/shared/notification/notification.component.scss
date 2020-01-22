@@ -1,0 +1,68 @@
+@import '../../../scss/spacing';
+@import '../../../scss/colors';
+@import '../../../scss/type';
+@import '../../../scss/helper_mixins';
+
+.app--inline-notification {
+    display: flex;
+    align-items: flex-start;
+    height: auto;
+    min-height: rem(32px);
+    min-width: rem(288px);
+    max-width: rem(288px);
+    margin: $spacing-4xl 0;
+    border-left: 5px solid $support-error;
+    background-color: #FFF0F1;
+}
+
+.app--inline-notification__close-button {
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    height: $spacing-3xl;
+    width: $spacing-3xl;
+}
+
+.app--inline-notification__details {
+    display: flex;
+    flex-grow: 1;
+}
+
+.app--inline-notification__text-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: $spacing-x $spacing-2xl;
+}
+
+.app--inline-notification__title {
+    @include type-style('productive-heading');
+    margin: 0 $spacing-x 0 0;
+    // line-height: rem(24px);
+}
+
+.app--inline-notification__subtitle {
+    @include type-style('body');
+    word-break: break-word;
+    margin: 0;
+}
+
+.app--inline-notification__close-button {
+    @include focus-outline('reset');
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    height: rem(32px);
+    width: rem(32px);
+    min-width: rem(32px);
+    max-width: rem(32px);
+
+    &:focus {
+      outline: 2px solid gray;
+      outline-offset: -2px;
+    }
+  }

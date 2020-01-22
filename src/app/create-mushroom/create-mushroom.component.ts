@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy, ANALYZE_FOR_ENTRY_COMPONENTS, ComponentFactoryResolver } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { MushroomsService } from '../mushrooms/mushrooms.service';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Mushroom } from '../mushrooms/mushroom.model';
+import { ModalComponent } from '../shared/modal/modal.component';
 
 @Component({
   selector: 'app-create-mushroom',
@@ -22,7 +23,7 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDe
   error = null;
   private errorSub: Subscription;
 
-  constructor(private mushroomsService: MushroomsService, private http: HttpClient) { }
+  constructor(private mushroomsService: MushroomsService, private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
     this.errorSub = this.mushroomsService.error.subscribe(errorMessage => {
@@ -49,6 +50,10 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDe
     } else {
       return true;
     }
+  }
+
+  onHandleError() {
+    this.error = null;
   }
 
   ngOnDestroy() {

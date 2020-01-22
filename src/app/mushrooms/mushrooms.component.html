@@ -7,4 +7,9 @@
     <button class="app--btn app--btn--secondary">Положить в лукошко</button>
 </div>
 <p *ngIf="isFetching && !error">Загрузка...</p>
-<p *ngIf="error">Ошибка {{ error }}</p>
+<app-notification
+    *ngIf="error"
+    [title]="'Ошибка:'"
+    [subtitle]="error"
+    (click)="onHandleError()">
+</app-notification>

@@ -33,4 +33,8 @@ export class MushroomsComponent implements OnInit {
       }
     );
   }
+
+  onHandleError() {
+    this.error = null;
+  }
 }

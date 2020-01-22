@@ -74,12 +74,12 @@
 }
 
 input.ng-invalid.ng-touched {
-    border: 2px solid $support-01;
+    border: 2px solid $support-error;
     
 }
 
 .app--form-requirement {
     @include type-style('helper-text');
     padding-top: $spacing-xs;
-    color: $support-01;
+    color: $support-error;
 }

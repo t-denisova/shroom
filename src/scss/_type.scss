@@ -1,5 +1,12 @@
 @import './helper_mixins';
 
+$productive-heading: (
+    font-family: 'Montserrat',
+    font-size: rem(14px),
+    line-height: rem(16px),
+    font-weight: 600
+) !default;
+
 $heading-01: (
     font-family: 'Rubik Mono One',
     font-size: rem(28px),
@@ -36,6 +43,7 @@ $helper-text: (
 ) !default;
 
 $tokens: (
+    productive-heading: $productive-heading,
     label: $label,
     body: $body,
     heading: $heading,

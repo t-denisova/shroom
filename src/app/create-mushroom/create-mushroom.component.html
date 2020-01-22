@@ -58,7 +58,12 @@
     <img src="{{ imagePath }}" class="app--selected-image">
     <button class="app--btn app--btn--primary" type="submit" [disabled] = "!f.valid">Сохранить грибок</button>
 </form>
-<p *ngIf="error">Ошибка {{ error }}</p>
+<app-notification
+    *ngIf="error"
+    [title]="'Ошибка:'"
+    [subtitle]="error"
+    (close)="onHandleError()">
+</app-notification>
 
 <div *ngIf="changesSaved">
     <p>Вы создали чудесный грибок</p>
@@ -66,3 +71,7 @@
     <p>{{ mushroom.name }}</p>
     <button class="app--btn app--btn--primary" (click)="onMakeMushroom()">Создать еще грибок</button>
 </div>
+<!-- <app-modal
+    [header]="'Сохранение'"
+    [content]="'Вы хотите уйти без сохранения грибка?'">
+</app-modal> -->
