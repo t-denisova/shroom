@@ -1,11 +1,14 @@
-<div *ngFor="let mushroom of loadedMushrooms">
-    <img
-        [src]="mushroom.imagePath"
-        alt="{{ mushroom.name }}"
-        style="max-height: 150px;">
-    <p>{{ mushroom.name }}</p>
-    <button class="app--btn app--btn--secondary">Положить в лукошко</button>
+<div class="app--mushrooms-list">
+    <div class="app--mushroom-card"*ngFor="let mushroom of loadedMushrooms">
+        <img
+            [src]="mushroom.imagePath"
+            alt="{{ mushroom.name }}"
+            style="max-height: 150px;">
+        <p>{{ mushroom.name }}</p>
+        <button class="app--btn app--btn--secondary">Положить в лукошко</button>
+    </div>
 </div>
+
 <p *ngIf="isFetching && !error">Загрузка...</p>
 <app-notification
     *ngIf="error"
