@@ -6,12 +6,14 @@
                 <a
                     [routerLink]="['/mushrooms', 'edible']"
                     class="app--header__menu-item"
+                    *ngIf="isAuthenticated"
                     >Съедобные грибы</a>
             </li>
             <li>
                 <a
                     [routerLink]="['/mushrooms', 'inedible']"
                     class="app--header__menu-item"
+                    *ngIf="isAuthenticated"
                     >Несъедобные грибы</a>
             </li>
             <li>
@@ -34,6 +36,7 @@
             *ngIf="!isAuthenticated">Зарегистрироваться</button>
         <button
             class="app--header__action app--btn"
-            *ngIf="isAuthenticated">Выйти</button>
+            *ngIf="isAuthenticated"
+            (click)="onLogout()">Выйти</button>
     </div>
 </header> 
