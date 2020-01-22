@@ -5,7 +5,6 @@ import { MushroomsComponent } from './mushrooms/mushrooms.component';
 import { CreateMushroomComponent } from './create-mushroom/create-mushroom.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AuthGuardService } from './auth-guard.service';
 import { CanDeactivateGuard } from './create-mushroom/can-deactivate-guard.service';
 import { AuthComponent } from './auth/auth.component';
 
