@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, tap } from 'rxjs/operators';
-import { throwError, Subject } from 'rxjs';
+import { throwError, BehaviorSubject } from 'rxjs';
 import { User } from './user.model';
 
 export interface AuthResponceData {
@@ -15,12 +15,14 @@ export interface AuthResponceData {
 
 @Injectable()
 export class AuthService {
-    user = new Subject<User>();
+    user = new BehaviorSubject<User>(null);
+    token: string = null;
 
     constructor(private http: HttpClient) {}
 
     signup(email: string, password: string) {
-        return this.http.post<AuthResponceData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCANsM6DqsE-hWNhH8v0AwNmjIsX1QpidM',
+        return this.http.post<AuthResponceData>(
+            'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCANsM6DqsE-hWNhH8v0AwNmjIsX1QpidM',
             {
                 email: email,
                 password: password,
@@ -40,7 +42,8 @@ export class AuthService {
     }
 
     login(email: string, password: string) {
-        return this.http.post<AuthResponceData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCANsM6DqsE-hWNhH8v0AwNmjIsX1QpidM',
+        return this.http.post<AuthResponceData>(
+            'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCANsM6DqsE-hWNhH8v0AwNmjIsX1QpidM',
             {
                 email: email,
                 password: password,
