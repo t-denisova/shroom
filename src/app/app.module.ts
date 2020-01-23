@@ -18,7 +18,6 @@ import { LoadingComponent } from './shared/loading/loading.component';
 import { AuthInterceptorService } from './auth/auth-interseptor.service';
 import { PanelComponent } from './panel/panel.component';
 import { SwitcherDirective } from './header/switcher.directive';
-import { ModalComponent } from './shared/modal/modal.component';
 import { NotificationComponent } from './shared/notification/notification.component';
 
 @NgModule({
@@ -33,7 +32,6 @@ import { NotificationComponent } from './shared/notification/notification.compon
     LoadingComponent,
     PanelComponent,
     SwitcherDirective,
-    ModalComponent,
     NotificationComponent
   ],
   imports: [
