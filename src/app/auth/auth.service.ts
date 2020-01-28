@@ -9,7 +9,7 @@ export interface AuthResponceData {
     idToken: string;
     email: string;
     refreshToken: string;
-    expriresIn: string;
+    expiresIn: string;
     localId: string;
     registered?: boolean;
 }
@@ -36,7 +36,7 @@ export class AuthService {
                    resData.email,
                    resData.localId,
                    resData.idToken,
-                   +resData.expriresIn
+                   +resData.expiresIn
                 );
             })
         );
@@ -57,7 +57,7 @@ export class AuthService {
                     resData.email,
                     resData.localId,
                     resData.idToken,
-                    +resData.expriresIn
+                    +resData.expiresIn
                 );
             })
         );
@@ -92,7 +92,12 @@ export class AuthService {
         this.router.navigate(['/login']);
     }
 
-    private handleAuthentication(email: string, userId: string, token: string, expriresIn: number) {
+    private handleAuthentication(
+        email: string,
+        userId: string,
+        token: string,
+        expriresIn: number) {
+
         const expirationDate = new Date(new Date().getTime() + expriresIn * 1000);
         const user = new User(
             email,
