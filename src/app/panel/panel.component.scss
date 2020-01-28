@@ -8,7 +8,57 @@
     bottom: 0;
     width: rem(300px);
     background-color: #221F20;
-    display: none;
+    padding: $spacing-2xl;
+    color: white;
+    // display: none;
+}
+
+.app--structured-list {
+    display: table;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 5rem;
+    background-color: transparent;
+}
+
+.app--structured-list-row {
+    display: table-row;
+}
+
+.app--structured-list-thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-bottom: 1px solid gray;
+}
+
+.app--structured-list-th {
+    display: table-cell;
+    height: rem(40px);
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.app--structured-list-tbody {
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+.app--structured-list-td {
+    position: relative;
+    display: table-cell;
+    max-width: 36rem;
+}
+
+.app--structured-list-td,
+.app--structured-list-th {
+    padding: $spacing-x 0 $spacing-x 0;
+}
+
+.app--structured-list-content--right {
+    text-align: right;
 }
 
 .app--panel--expanded {

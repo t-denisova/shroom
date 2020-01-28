@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 
 import { MushroomsService } from './mushrooms.service';
 import { Mushroom } from './mushroom.model';
+import { AddingService } from '../shared/adding.service';
  
 @Component({
   selector: 'app-mushrooms',
@@ -16,7 +16,10 @@ export class MushroomsComponent implements OnInit {
   isFetching = false;
   error = null;
 
-  constructor(private route: ActivatedRoute, private mushroomsService: MushroomsService, private http: HttpClient) { }
+  constructor(
+    private route: ActivatedRoute,
+    private mushroomsService: MushroomsService,
+    private addingSerice: AddingService) { }
 
   ngOnInit() {
     this.isFetching = true;
@@ -32,6 +35,10 @@ export class MushroomsComponent implements OnInit {
         });
       }
     );
+  }
+
+  onAddMushroom(mushroom: Mushroom) {
+    this.addingSerice.addToBasket(mushroom);
   }
 
   onHandleError() {

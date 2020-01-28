@@ -1,1 +1,19 @@
-<aside class="app--panel"></aside>
+<aside
+    class="app--panel"
+    [ngClass]="{'app--panel--expanded': expanded}">
+    <section  class="app--structured-list">
+        <div class="app--structured-list-thead">
+            <div class="app--structured-list-row app--structured-list-row--header-row">
+                <div class="app--structured-list-th">Выбранные грибки</div>
+                <div class="app--structured-list-th app--structured-list-content--right">Колличество</div>
+            </div>
+        </div>
+        <div class="app--structured-list-tbody" *ngIf="addedMushrooms.length >= 1">
+            <div class="app--structured-list-row"  *ngFor="let mushroom of addedMushrooms">
+                <div class="app--structured-list-td"> {{ mushroom.mushroom.name }}</div>
+                <div class="app--structured-list-td app--structured-list-content--right">{{ mushroom.amount }}</div>
+            </div> 
+        </div>
+        <p *ngIf="addedMushrooms.length < 1">Пусто</p>
+    </section>
+</aside>
