@@ -1,9 +1,9 @@
 <div class="app--mushrooms-list">
-    <div class="app--mushroom-card"*ngFor="let mushroom of loadedMushrooms">
+    <div class="app--mushroom-card" *ngFor="let mushroom of loadedMushrooms">
         <img
+            class=""
             [src]="mushroom.imagePath"
-            alt="{{ mushroom.name }}"
-            style="max-height: 150px;">
+            alt="{{ mushroom.name }}">
         <p>{{ mushroom.name }}</p>
         <button class="app--btn app--btn--secondary">Положить в лукошко</button>
     </div>

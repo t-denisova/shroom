@@ -3,9 +3,7 @@ import { Observable, Subscription } from 'rxjs';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { MushroomsService } from '../mushrooms/mushrooms.service';
 import { NgForm } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { Mushroom } from '../mushrooms/mushroom.model';
-import { ModalComponent } from '../shared/modal/modal.component';
 
 @Component({
   selector: 'app-create-mushroom',
