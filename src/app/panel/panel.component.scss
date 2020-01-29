@@ -10,7 +10,6 @@
     background-color: #221F20;
     padding: $spacing-2xl;
     color: white;
-    // display: none;
 }
 
 .app--structured-list {
@@ -63,4 +62,7 @@
 
 .app--panel--expanded {
     display: block;
+}
+.app--panel--hidden {
+    display: none;
 }

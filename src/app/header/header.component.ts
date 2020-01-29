@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { Subscription } from 'rxjs';
+import { TriggerService } from './trigger.service';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,18 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   isAuthenticated = false;
+  isOpen = false
   private userSub: Subscription;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private triggerService: TriggerService) { }
 
   onLogout() {
     this.authService.logout();
+  }
+
+  onToggle() {
+    this.isOpen = !this.isOpen;
+    this.triggerService.toggleEmitter.next(this.isOpen);
   }
 
   ngOnInit() {
