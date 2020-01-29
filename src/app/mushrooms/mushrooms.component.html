@@ -10,11 +10,13 @@
             (click)="onAddMushroom(mushroom)">Положить в лукошко</button>
     </div>
 </div>
-
-<p *ngIf="isFetching && !error">Загрузка...</p>
 <app-notification
     *ngIf="error"
     [title]="'Ошибка:'"
     [subtitle]="error"
     (click)="onHandleError()">
 </app-notification>
+
+<div *ngIf="isFetching && !error">
+    <app-loading></app-loading>
+</div>

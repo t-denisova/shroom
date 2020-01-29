@@ -6,10 +6,7 @@
         [subtitle]="error"
         (click)="onHandleError()">
     </app-notification>
-    <div *ngIf="isLoading">
-        <app-loading></app-loading>
-    </div>
-    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
         <div class="app--form-item">
             <label for="email" class="app--label">Логин</label>
             <input
@@ -43,3 +40,6 @@
         </div>
     </form>
 </section>
+<div *ngIf="isLoading">
+    <app-loading></app-loading>
+</div>
