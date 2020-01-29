@@ -41,6 +41,10 @@
   &:active {
     background-color: $active-color;
   }
+
+  &:disabled {
+    opacity: .5;
+  }
 }
 
 .app--btn {

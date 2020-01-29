@@ -1,7 +1,10 @@
-@import './scss/colors';
-@import './scss/css--normalize';
-@import './scss/helper_mixins';
-@import './scss/spacing';
-@import './scss/type';
-@import './scss/body';
-@import './scss/button';
+@import './scss/global/colors';
+@import './scss/global/css--normalize';
+@import './scss/global/helper_mixins';
+@import './scss/global/spacing';
+@import './scss/global/type';
+@import './scss/global/body';
+
+@import './scss/components/button';
+@import './scss/components/form';
+@import './scss/components/input';

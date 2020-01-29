@@ -1,7 +1,7 @@
-@import '../../../scss/spacing';
-@import '../../../scss/colors';
-@import '../../../scss/type';
-@import '../../../scss/helper_mixins';
+@import '../../../scss/global/spacing';
+@import '../../../scss/global/colors';
+@import '../../../scss/global/type';
+@import '../../../scss/global/helper_mixins';
 
 .app--inline-notification {
     display: flex;

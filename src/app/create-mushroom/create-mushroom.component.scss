@@ -1,27 +1,13 @@
-@import '../../scss/spacing';
-@import '../../scss/type';
-@import '../../scss/colors';
+@import '../../scss/global/spacing';
+@import '../../scss/global/type';
+@import '../../scss/global/colors';
 
-.app--fieldset {
-    border: none;
-    margin: 0;
-    padding: 0;
-    margin-bottom: $spacing-2xl;
+@import '../../scss/global/helper_mixins';
+
+.app--radio-button {
+    @include hidden;
 }
 
-.app--form-item {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: $spacing-2xl;
-}
-
-.app--label {
-    @include type-style('label');
-    padding: 0;
-    display: inline-block;
-    vertical-align: initial;
-    margin: 0 0 $spacing-x 0;
-}
 .app--label + .app--radio-button-group {
     margin: 0;
 }
@@ -36,50 +22,57 @@
 
 .app--radio-button-wrapper {
     display: flex;
+    margin-bottom: 0.5rem;
     flex-direction: row;
+    align-items: flex-start;
 }
 
 .app--radio-button__label {
     @include type-style('body');
+    cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.app--radio-button__appearance {
     cursor: pointer;
-    margin-left: $spacing-x;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid black;
+    flex-shrink: 0;
+    height: rem(16px);
+    width: rem(16px);
+    margin-right: $spacing-x;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.app--text-input {
-    padding: 0 $spacing-x;
-    width: 340px;
-    height: $spacing-5xl;
-    background-color: $field;
-}
+.app--radio-button:checked + .app--radio-button__label .app--radio-button__appearance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: black;
 
-.app--text-input {
-    padding: 0 $spacing-x;
-    width: 340px;
-    height: $spacing-5xl;
-    background-color: $field;
-    color: $text-01;
-    border: none;
-
-    &:focus,
-    &:active {
-        outline: 2px solid $interactive-primary;
+    &:before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: black;
     }
+}
+
+.app--radio-button:focus {
+    box-shadow: 0 0 0 2px $focus;
+    outline: 1px solid transparent;
 }
 
 .app--selected-image {
     display: block;
     max-width: 250px;
-}
-
-input.ng-invalid.ng-touched {
-    border: 2px solid $support-error;
-    
-}
-
-.app--form-requirement {
-    @include type-style('helper-text');
-    padding-top: $spacing-xs;
-    color: $support-error;
 }
