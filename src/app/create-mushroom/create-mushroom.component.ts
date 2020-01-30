@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, OnDestroy, ANALYZE_FOR_ENTRY_COMPONENTS, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { MushroomsService } from '../mushrooms/mushrooms.service';
@@ -21,7 +21,7 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDe
   error = null;
   private errorSub: Subscription;
 
-  constructor(private mushroomsService: MushroomsService, private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor(private mushroomsService: MushroomsService) { }
 
   ngOnInit() {
     this.errorSub = this.mushroomsService.error.subscribe(errorMessage => {
