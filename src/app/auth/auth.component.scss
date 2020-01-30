@@ -1,3 +1,5 @@
+@import '../../scss/global/helper_mixins';
+
 :host {
     display: flex;
     flex-direction: column;
@@ -5,5 +7,6 @@
 }
 
 .app--auth {
-    width: 350px;
+    width: 100%;
+    max-width: rem(350px);
 }

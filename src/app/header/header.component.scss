@@ -10,7 +10,7 @@
     right: 0;
     height: $spacing-5xl;
     background-color: #221F20;
-    z-index: 6000; //header
+    z-index: z('header');
     border-bottom: 1px solid gray;
 }
 
@@ -26,7 +26,7 @@
     color: white;
     border: 2px solid transparent;
     font-family: 'Rubik Mono One', sans-serif;
-    font-size: 32px;
+    font-size: rem(32px);
 }
 
 .app--header__name:focus {
@@ -92,8 +92,8 @@
 }
 
 .app--header__action:focus {
+    @include focus-outline('reset');
     border-color: #fff;
-    outline: none;
 }
 
 .app--header__action--active {
@@ -109,10 +109,10 @@
 
 .app--header__basket {
     position: absolute;
-    top: 4px;
-    right: 4px;
-    width: 12px;
-    height: 12px;
+    top: $spacing-xs;
+    right: $spacing-xs;
+    width: rem(12px);
+    height: rem(12px);
     background-color: $ui-02;
     border-radius: 50%;
 }

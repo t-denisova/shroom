@@ -3,6 +3,17 @@
 @import '../../scss/global/colors';
 @import '../../scss/global/helper_mixins';
 
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app--create-mushroom {
+    width: 100%;
+    max-width: rem(350px);
+}
+
 .app--radio-button {
     @include hidden;
 }
@@ -59,8 +70,8 @@
       content: '';
       display: inline-block;
       position: relative;
-      width: 0.5rem;
-      height: 0.5rem;
+      width: .5rem;
+      height: .5rem;
       border-radius: 50%;
       background-color: black;
     }
@@ -73,5 +84,5 @@
 
 .app--selected-image {
     display: block;
-    max-width: 250px;
+    max-width: rem(250px);
 }

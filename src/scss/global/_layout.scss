@@ -1,0 +1,16 @@
+$z-indexes: (
+  modal: 9000,
+  overlay: 8000,
+  dropdown: 9100,
+  header: 6000,
+  hidden: - 1,
+);
+
+// z-index: z('modal');
+@function z($layer) {
+    @if not map-has-key($z-indexes, $layer) {
+      @warn '#{$layer}`Property `#{$layer}` does not exist';
+    }
+  
+    @return map-get($z-indexes, $layer);
+}

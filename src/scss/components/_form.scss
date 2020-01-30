@@ -11,38 +11,8 @@
     margin-bottom: $spacing-2xl;
 }
 
-.app--label {
-    @include type-style('label');
-    padding: 0;
-    display: inline-block;
-    vertical-align: initial;
-    margin: 0 0 $spacing-x 0;
-}
-
-.app--text-input {
-    padding: 0 $spacing-x;
-    width: 340px;
-    height: $spacing-5xl;
-    background-color: $field;
-}
-
-.app--text-input {
-    padding: 0 $spacing-x;
-    width: 340px;
-    height: $spacing-5xl;
-    background-color: $field;
-    color: $text-01;
-    border: none;
-
-    &:focus,
-    &:active {
-        outline: 2px solid $interactive-primary;
-    }
-}
-
 input.ng-invalid.ng-touched {
-    border: 2px solid $support-error;
-    
+    @include focus-outline('invalid');
 }
 
 .app--form-requirement {
