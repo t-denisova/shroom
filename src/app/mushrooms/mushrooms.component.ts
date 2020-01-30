@@ -13,6 +13,7 @@ import { AddingService } from '../shared/adding.service';
 export class MushroomsComponent implements OnInit {
   classification: string;
   loadedMushrooms: Mushroom[] = [];
+  
   isFetching = false;
   error = null;
 

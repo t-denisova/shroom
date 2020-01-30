@@ -37,11 +37,6 @@ export class PanelComponent implements OnInit, OnDestroy {
     });
   }
 
-  onClear() {
-    this.addingService.clearBasket();
-    this.addedMushrooms = this.addingService.getMushrooms();
-  }
-
   ngOnDestroy(): void {
     this.toggleSub.unsubscribe();
     this.userSub.unsubscribe();

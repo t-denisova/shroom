@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { Subscription } from 'rxjs';
 import { TriggerService } from './trigger.service';
-import { AddingService } from '../shared/adding.service';
+import { AddingService, MushroomData } from '../shared/adding.service';
 
 @Component({
   selector: 'app-header',
@@ -14,16 +14,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isOpenPanel = false;
   isOpenMenu = false;
   private userSub: Subscription;
+  addedMushrooms: MushroomData[] = [];
 
   constructor(
     private authService: AuthService,
     private triggerService: TriggerService,
-    private addingServise: AddingService) { }
+    private addingService: AddingService) { }
 
   onLogout() {
     this.authService.logout();
     this.onTogglePanel();
-    this.addingServise.clearBasket();
+    this.addingService.clearBasket();
   }
 
   onTogglePanel() {
@@ -38,8 +39,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.userSub = this.authService.user.subscribe(user => {
-      this.isAuthenticated = !user ? false : true;
+      this.isAuthenticated = !!user;
     });
+    this.addedMushrooms = this.addingService.getMushrooms();
+    this.addingService.mushroomChanged
+      .subscribe(
+        (mushroom: MushroomData[]) => {
+          this.addedMushrooms = mushroom;
+        }
+      );
   }
 
   ngOnDestroy() {
