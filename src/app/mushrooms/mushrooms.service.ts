@@ -17,9 +17,7 @@ export class MushroomsService {
             .post<{ name: string }>(
                 'https://shroom-265311.firebaseio.com/mushrooms.json',
                 mushroomData
-            ).subscribe(responseData => {
-                console.log(responseData);
-            }, error => {
+            ).subscribe(responseData => error => {
               this.error.next(error.message);
             });
     }

@@ -1,4 +1,5 @@
 <aside
+    *ngIf="isAuthenticated"
     class="app--panel"
     [ngClass]="{'app--panel--hidden': !expanded}">
     <section  class="app--structured-list">
@@ -16,4 +17,5 @@
         </div>
         <p *ngIf="addedMushrooms.length < 1">Пусто</p>
     </section>
+    <button (click)="onClear()">Очистить</button>
 </aside>
