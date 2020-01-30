@@ -1,0 +1,72 @@
+@import '../../scss/global/spacing';
+@import '../../scss/global/helper_mixins';
+@import '../../scss/global/colors';
+
+.app--side-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200; //mini-units(6)
+  max-width: 300; // mini-units(32)
+  color: black;
+  background-color: white;
+  will-change: width;
+  // TODO: sync with motion work
+  transition: width 0.11s cubic-bezier(0.2, 0, 1, 0.9);
+  top: 40px;
+  overflow: hidden;
+  z-index: 6000;
+  display: none;
+}
+
+.app--side-nav__navigation {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.app--side-nav__items {
+    flex: 1 1 0%;
+    overflow-y: auto;
+    padding: 1rem 0 0;
+}
+
+.app--side-nav__item {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.app--side-nav__link {
+    @include focus-outline('reset');
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    min-height: 32px;
+    padding: 0 16px;
+    color: black;
+    font-size: rem(14px);
+    line-height: rem(20px);
+    user-select: none;
+    cursor: pointer;
+}
+
+.app--side-nav__link:hover {
+    background-color: gray;
+}
+
+.app--side-nav__link:focus {
+    @include focus-outline('outline');
+}
+
+.app--side-nav--hidden {
+    @include hidden;
+}
+
+@media (max-width: 55rem) {
+    .app--side-nav{
+        display: block;
+    }
+}

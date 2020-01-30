@@ -3,5 +3,6 @@ import { Subject } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class TriggerService {
-    toggleEmitter = new Subject<boolean>();
+    togglePanelEmitter = new Subject<boolean>();
+    toggleMenuEmitter = new Subject<boolean>();
 }

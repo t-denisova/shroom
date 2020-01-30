@@ -99,6 +99,16 @@
     border-bottom: 2px solid #221F20;
 }
 
-.app--header__action > svg {
-    // fill: #ffffff;
+.app--header__menu-toggle {
+    display: none;
+    position: absolute;
+}
+
+@media (max-width: 55rem) {
+    .app--header__nav {
+        display: none;
+    }
+    .app--header__menu-toggle {
+        display: block;
+    }
 }

@@ -1,4 +1,13 @@
 <header class="app--header">
+    <div class="app--header__menu-toggle">
+        <button
+            class="app--header__action"
+            *ngIf="isAuthenticated"
+            (click)="onToggleMenu()"
+            title="Меню">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 9.5H3M21 4.5H3M21 14.5H3M21 19.5H3"/></svg>
+        </button>
+    </div>
     <a routerLink="/" class="app--header__name">ШРУМ</a>
     <nav class="app--header__nav">
         <ul class="app--header__menu-bar">
@@ -51,7 +60,7 @@
             class="app--header__action"
             *ngIf="isAuthenticated"
             appSwitcher
-            (click)="onToggle()"
+            (click)="onTogglePanel()"
             title="Лукошко">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>
         </button>

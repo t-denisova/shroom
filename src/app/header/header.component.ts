@@ -10,7 +10,8 @@ import { TriggerService } from './trigger.service';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   isAuthenticated = false;
-  isOpen = false
+  isOpenPanel = false;
+  isOpenMenu = false;
   private userSub: Subscription;
 
   constructor(private authService: AuthService, private triggerService: TriggerService) { }
@@ -19,9 +20,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.authService.logout();
   }
 
-  onToggle() {
-    this.isOpen = !this.isOpen;
-    this.triggerService.toggleEmitter.next(this.isOpen);
+  onTogglePanel() {
+    this.isOpenPanel = !this.isOpenPanel;
+    this.triggerService.togglePanelEmitter.next(this.isOpenPanel);
+    console.log('panel '+ this.isOpenPanel);
+  }
+
+  onToggleMenu() {
+    this.isOpenMenu = !this.isOpenMenu;
+    this.triggerService.toggleMenuEmitter.next(this.isOpenMenu);
+    console.log('menu '+ this.isOpenMenu);
   }
 
   ngOnInit() {

@@ -11,16 +11,15 @@ import { Subscription } from 'rxjs';
 })
 export class PanelComponent implements OnInit, OnDestroy {
   addedMushrooms: MushroomData[] = [];
-  expaneded = false;
+  expanded = false;
   private toggleSub: Subscription;
 
   constructor(private addingService: AddingService, private triggerService: TriggerService) { }
 
   ngOnInit() {
     this.addedMushrooms = this.addingService.getMushrooms();
-    this.toggleSub = this.triggerService.toggleEmitter.subscribe(didExpand => {
-      this.expaneded = didExpand;
-      console.log(this.expaneded);
+    this.toggleSub = this.triggerService.togglePanelEmitter.subscribe(didExpand => {
+      this.expanded = didExpand
     });
   }
 
