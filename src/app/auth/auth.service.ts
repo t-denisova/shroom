@@ -119,7 +119,7 @@ export class AuthService {
             email,
             userId,
             token,
-            expirationDate
+            expirationDate,
         );
         this.user.next(user);
         this.autoLogout(expriresIn * 1000);

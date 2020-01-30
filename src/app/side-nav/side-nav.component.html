@@ -3,13 +3,13 @@
     <nav class="app--side-nav__navigation">
         <ul class="app--side-nav__items">
             <li class="app--side-nav__item">
-                <a class="app--side-nav__link">Съедобные грибы</a>
+                <a class="app--side-nav__link" [routerLink]="['/mushrooms', 'edible']">Съедобные грибы</a>
             </li>
             <li class="app--side-nav__item">
-                <a class="app--side-nav__link">Несъедобные грибы</a>
+                <a class="app--side-nav__link" [routerLink]="['/mushrooms', 'inedible']">Несъедобные грибы</a>
             </li>
             <li class="app--side-nav__item">
-                <a class="app--side-nav__link">Создать гриб</a>
+                <a class="app--side-nav__link" [routerLink]="['/create-mushroom']">Создать гриб</a>
             </li>
         </ul>
     </nav>
