@@ -39,9 +39,8 @@
 }
 
 .app--inline-notification__title {
-    @include type-style('productive-heading');
+    @include type-style('heading-01');
     margin: 0 $spacing-x 0 0;
-    // line-height: rem(24px);
 }
 
 .app--inline-notification__subtitle {

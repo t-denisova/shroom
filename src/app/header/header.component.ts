@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.authService.logout();
-    this.onTogglePanel();
     this.addingService.clearBasket();
   }
 

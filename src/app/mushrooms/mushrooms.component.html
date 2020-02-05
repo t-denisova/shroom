@@ -1,14 +1,9 @@
 <div class="app--mushrooms-list">
-    <div class="app--mushroom-card" *ngFor="let mushroom of loadedMushrooms">
-        <img
-            class="app--mushroom-card__image"
-            [src]="mushroom.imagePath"
-            alt="{{ mushroom.name }}">
-        <p>{{ mushroom.name }}</p>
-        <div (click)="onAddMushroom(mushroom)" class="app--mushroom-card__button">
-            <button
-            class="app--btn app--btn--secondary"
-            >Положить в лукошко</button>
+    <div class="app--mushroom-card__wrapper" *ngFor="let mushroom of loadedMushrooms">
+        <div class="app--mushroom-card" (click)="onAddMushroom(mushroom)"
+            [ngStyle]="{'background-image': 'url(' + mushroom.imagePath + ')'}"
+            title="Положить в лукошко">
+            <p class="app--mushroom-card__name">{{ mushroom.name }}</p>
         </div>
     </div>
 </div>

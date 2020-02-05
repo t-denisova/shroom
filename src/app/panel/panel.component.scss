@@ -1,5 +1,6 @@
 @import '../../scss/global/spacing';
 @import '../../scss/global/colors';
+@import '../../scss/global/layout';
 
 .app--panel {
     position: fixed;
@@ -10,6 +11,7 @@
     background-color: #221F20;
     padding: $spacing-2xl;
     color: white;
+    z-index: z('header');
 }
 
 .app--structured-list {

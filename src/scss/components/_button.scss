@@ -50,6 +50,10 @@
     @include button-base;
 }
 
+.app--btn--set .app--btn + .app--btn {
+  margin-left: $spacing-x;
+}
+
 .app--btn::-moz-focus-inner {
     padding: 0;
     border: 0;

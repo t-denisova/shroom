@@ -1,9 +1,8 @@
 $z-indexes: (
   modal: 9000,
   overlay: 8000,
-  dropdown: 9100,
   header: 6000,
-  hidden: - 1,
+  overflowHidden: -1,
 );
 
 // z-index: z('modal');

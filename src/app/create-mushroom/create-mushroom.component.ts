@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy, ComponentFactoryResolver } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { MushroomsService } from '../mushrooms/mushrooms.service';
 import { NgForm } from '@angular/forms';
 import { Mushroom } from '../mushrooms/mushroom.model';
+import { ModalComponent } from '../modal/modal.component';
+import { PlaceholderDirective } from './placeholder.directive';
 
 @Component({
   selector: 'app-create-mushroom',
@@ -12,6 +14,10 @@ import { Mushroom } from '../mushrooms/mushroom.model';
 })
 export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDestroy {
   @ViewChild('f', {static: false}) createMushroomForm: NgForm;
+  @ViewChild(PlaceholderDirective, {static:false}) modalHost: PlaceholderDirective;
+
+  private closeSub: Subscription;
+
   mushroom: Mushroom = {
     classification: '',
     name: '',
@@ -19,9 +25,12 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDe
   }
   changesSaved = false;
   error = null;
+  stay = false;
   private errorSub: Subscription;
 
-  constructor(private mushroomsService: MushroomsService) { }
+  constructor(
+    private mushroomsService: MushroomsService,
+    private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
     this.errorSub = this.mushroomsService.error.subscribe(errorMessage => {
@@ -42,9 +51,26 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDe
     this.changesSaved = false;
   }
 
+  private showModal() {
+    const modalCompFactory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+    const hostViewContainerRef = this.modalHost.viewContainerRef;
+    hostViewContainerRef.clear();
+    const modalRef = hostViewContainerRef.createComponent(modalCompFactory);
+
+    this.closeSub = modalRef.instance.close.subscribe(data => {
+      console.log(data);
+      this.stay = data;
+      this.closeSub.unsubscribe();
+      hostViewContainerRef.clear();
+    });
+
+    return this.stay;
+  }
+
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
     if (!this.changesSaved) {
-      return confirm('Вы хотите уйти без сохранения гриба?');
+      // return confirm('Вы хотите уйти без сохранения гриба?');
+      return this.showModal();
     } else {
       return true;
     }
@@ -56,5 +82,8 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDe
 
   ngOnDestroy() {
     this.errorSub.unsubscribe();
+    if(this.closeSub) {
+      this.closeSub.unsubscribe();
+    }
   }
 }

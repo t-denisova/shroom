@@ -20,6 +20,8 @@ import { PanelComponent } from './panel/panel.component';
 import { SwitcherDirective } from './header/switcher.directive';
 import { NotificationComponent } from './shared/notification/notification.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { ModalComponent } from './modal/modal.component';
+import { PlaceholderDirective } from './create-mushroom/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     PanelComponent,
     SwitcherDirective,
     NotificationComponent,
-    SideNavComponent
+    SideNavComponent,
+    ModalComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,9 @@ import { SideNavComponent } from './side-nav/side-nav.component';
         multi: true
       }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ModalComponent
+  ]
 })
 export class AppModule { }

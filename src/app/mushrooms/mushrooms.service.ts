@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Mushroom } from './mushroom.model';
 import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';

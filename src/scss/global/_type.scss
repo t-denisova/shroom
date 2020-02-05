@@ -1,16 +1,17 @@
 @import './helper_mixins';
 
-$productive-heading: (
-    font-family: 'Montserrat',
-    font-size: rem(14px),
-    line-height: rem(16px),
-    font-weight: 600
+$productive-heading-01: (
+    font-family: 'Rubik Mono One',
+    font-size: rem(32px),
+    line-height: rem(40px),
+    font-weight: 400
 ) !default;
 
+
 $heading-01: (
-    font-family: 'Rubik Mono One',
-    font-size: rem(28px),
-    line-height: rem(36px),
+    font-family: 'Montserrat',
+    font-size: rem(20px),
+    line-height: rem(26px),
     font-weight: 400
 ) !default;
 
@@ -28,13 +29,6 @@ $body: (
     font-weight: 400
 ) !default;
 
-$heading: (
-    font-family: 'Montserrat',
-    font-size: rem(22px),
-    line-height: rem(26px),
-    font-weight: 400
-) !default;
-
 $helper-text: (
     font-family: 'Montserrat',
     font-size: rem(12px),
@@ -43,10 +37,10 @@ $helper-text: (
 ) !default;
 
 $tokens: (
-    productive-heading: $productive-heading,
+    productive-heading-01: $productive-heading-01,
+    heading-01: $heading-01,
     label: $label,
     body: $body,
-    heading: $heading,
     helper-text: $helper-text
 );
 

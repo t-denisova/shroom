@@ -1,3 +1,4 @@
+<ng-template appPlaceholder></ng-template>
 <section class="app--create-mushroom">
     <form *ngIf="!changesSaved" (ngSubmit)="onSaveMushroom(f)" #f="ngForm"> 
         <fieldset class="app--fieldset">
@@ -75,3 +76,5 @@
         <button class="app--btn app--btn--primary" (click)="onMakeMushroom()">Создать еще грибок</button>
     </div>
 </section>
+
+<!-- <app-modal></app-modal> -->
