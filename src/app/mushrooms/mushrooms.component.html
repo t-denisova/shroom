@@ -3,7 +3,7 @@
         <div class="app--mushroom-card" (click)="onAddMushroom(mushroom)"
             [ngStyle]="{'background-image': 'url(' + mushroom.imagePath + ')'}"
             title="Положить в лукошко">
-            <p class="app--mushroom-card__name">{{ mushroom.name }}</p>
+            <p class="app--text-truncate app--mushroom-card__name" title="{{ mushroom.name }}">{{ mushroom.name }}</p>
         </div>
     </div>
 </div>

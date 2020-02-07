@@ -71,7 +71,12 @@
 
     &:hover {
         color: $text-04;
+        background-color: $hover-primary;
     }
+    &:hover {
+      color: $text-04;
+      background-color: $active-primary
+  }
   }
 
 .app--btn--secondary {
@@ -85,11 +90,12 @@
 
     &:hover {
         color: $text-04;
+        background-color: $hover-primary;
     }
 
     &:focus {
         color: $text-04;
-        background-color: $interactive-primary;
+        background-color: $active-primary;
     }
 
     &:active {
