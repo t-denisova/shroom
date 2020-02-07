@@ -28,7 +28,7 @@
   border-color: $border-color;
   color: $font-color;
 
-  &:hover {
+  &:hover(:not(:disabled)) {
     background-color: $hover-bg-color;
   }
 
@@ -43,6 +43,7 @@
 
   &:disabled {
     opacity: .5;
+    cursor: not-allowed;
   }
 }
 

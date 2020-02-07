@@ -1,12 +1,24 @@
 @import '../../scss/global/helper_mixins';
+@import '../../scss/global/colors';
 
 :host {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; 
 }
 
 .app--auth {
     width: 100%;
     max-width: rem(350px);
+}
+
+.app--image {
+    position: absolute;
+    width: calc(100% - 400px);
+    left: 400px;
+    height: calc(100% - 80px);
+    background-image: url('../../assets/all.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
 }

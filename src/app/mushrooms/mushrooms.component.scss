@@ -22,27 +22,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: $spacing-x;
+    padding: $spacing-2xl;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     width: auto;
     height: auto;
-    min-height: 200px;
-    max-width: 400px;
+    height: 250px;
+    width: 250px;
     background-color: transparent;
     cursor: pointer;	
 }
 
 .app--mushroom-card__name {
     @include type-style('productive-heading-01');
-    margin: 80px 0 0 0;
+    margin: 180px 0 0 0;
     color: $text-01;
+    // word-break: break-all;
 }
 
 .app--mushroom-card:hover .app--mushroom-card__name {
-    color: $text-03;
+    color: $interactive-primary;
 }
 .app--mushroom-card:active .app--mushroom-card__name {
-    color: $text-01;
+    color: $active-primary;
 }

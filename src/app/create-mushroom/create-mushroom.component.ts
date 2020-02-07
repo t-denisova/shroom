@@ -25,7 +25,6 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDe
   }
   changesSaved = false;
   error = null;
-  stay = false;
   private errorSub: Subscription;
 
   constructor(
@@ -55,22 +54,22 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDe
     const modalCompFactory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
     const hostViewContainerRef = this.modalHost.viewContainerRef;
     hostViewContainerRef.clear();
+    let comfirm: boolean;
     const modalRef = hostViewContainerRef.createComponent(modalCompFactory);
-
     this.closeSub = modalRef.instance.close.subscribe(data => {
-      console.log(data);
-      this.stay = data;
+      comfirm = data;
+      console.log(data, comfirm)
       this.closeSub.unsubscribe();
       hostViewContainerRef.clear();
     });
-
-    return this.stay;
+    console.log(comfirm)
+    return comfirm;
   }
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
     if (!this.changesSaved) {
-      // return confirm('Вы хотите уйти без сохранения гриба?');
-      return this.showModal();
+      this.showModal();
+      //return true;
     } else {
       return true;
     }
