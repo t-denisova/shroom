@@ -19,7 +19,7 @@
 }
 
 .app--modal__container {
-    background-color: white;
+    background-color: $background-01;
     width: 80%;
     max-width: rem(800px);
 }
@@ -49,6 +49,6 @@
     align-items: center;
     margin-top: auto;
     height: 4rem;
-    background-color: #e0e0e0;
+    background-color: $background-02;
     padding: 0 $spacing-2xl;
 }

@@ -8,9 +8,9 @@
     right: 0;
     bottom: 0;
     width: rem(300px);
-    background-color: #221F20;
+    background-color: $inverse-background;
     padding: $spacing-2xl;
-    color: white;
+    color: $inverse-content;
     z-index: z('header');
 }
 

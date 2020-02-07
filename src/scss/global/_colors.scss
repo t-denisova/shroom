@@ -1,14 +1,20 @@
 $interactive-primary: #0051F6 !default;
 $ui-background: #f3f3f3;
 $background-01: #fff;
-$background-02: #e0e0e0;
+$background-02: #f3f3f3;
 $field: #fff !default;
 $text-01: #221F20 !default;
 $text-03: #0051F6 !default;
 $text-04: #fff !default;
 $ui-02: #0051F6 !default;
+// add grays ui
 $support-error: #da1e28 !default;
 $focus: #0051F6 !default;
 $overflow: rgba(#171717, .5) !default;
+$inverse-content: #fff;
+$inverse-background: #221F20;
+
 $hover-primary: darken($interactive-primary, 10%) !default;
 $active-primary: darken($interactive-primary, 15%) !default;
+$hover-inverse: lighten($inverse-background, 15%) !default;
+$active-inverse: lighten($inverse-background, 15%) !default;

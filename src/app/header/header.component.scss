@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     height: $spacing-5xl;
-    background-color: #221F20;
+    background-color: $inverse-background;
     z-index: z('header');
     border-bottom: 1px solid gray;
 }
@@ -26,12 +26,12 @@
     text-decoration: none;
     user-select: none;
     outline: none;
-    color: white;
+    color: $inverse-content;
     border: 2px solid transparent;
 }
 
 .app--header__name:focus {
-    border-color: white;
+    border-color: $inverse-content;
 }
 
 .app--header__nav {
@@ -52,16 +52,16 @@
     height: 100%;
     padding: 0 $spacing-2xl;
     text-decoration: none;
-    color: white;
+    color: $inverse-content;
     border: 2px solid transparent;
 }
 
 .app--header__menu-item:hover {
-    background-color: gray;
+    background-color: $hover-inverse;
 }
 
 .app--header__menu-item:focus {
-    border-color: white;
+    border-color: $inverse-content;
 }
 
 .app--header__actions {
@@ -76,7 +76,7 @@
     height: $spacing-5xl;
     border: 2px solid transparent;
     background-color: transparent;
-    color: white;
+    color: $inverse-content;
     width: rem(40px);
     cursor: pointer;
     display: flex;
@@ -84,17 +84,17 @@
 }
 
 .app--header__action:hover {
-    background-color: gray;
+    background-color: $hover-inverse;
 }
 
 .app--header__action:active {
-    background-color: gray;
-    color: #fff;
+    background-color: $active-inverse;
+    color: $inverse-content;
 }
 
 .app--header__action:focus {
     @include focus-outline('reset');
-    border-color: #fff;
+    border-color: $inverse-content;
 }
 
 .app--header__action--active {
