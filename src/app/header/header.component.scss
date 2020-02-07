@@ -13,7 +13,7 @@
     height: $spacing-5xl;
     background-color: $inverse-background;
     z-index: z('header');
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid $ui-03;
 }
 
 .app--header__name {
@@ -98,9 +98,9 @@
 }
 
 .app--header__action--active {
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    border-bottom: 2px solid #221F20;
+    border-left: 1px solid $ui-03;
+    border-right: 1px solid $ui-03;
+    border-bottom: 2px solid $ui-02;
 }
 
 .app--header__menu-toggle {
@@ -114,7 +114,7 @@
     right: $spacing-xs;
     width: rem(12px);
     height: rem(12px);
-    background-color: $ui-02;
+    background-color: $ui-01;
     border-radius: 50%;
 }
 
