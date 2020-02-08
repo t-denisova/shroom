@@ -69,10 +69,13 @@
         (close)="onHandleError()">
     </app-notification>
 
-    <div *ngIf="changesSaved">
-        <p>Вы создали чудесный грибок</p>
-        <img src="{{ mushroom.imagePath }}" alt="" class="app--selected-image">
-        <p>{{ mushroom.name }}</p>
-        <button class="app--btn app--btn--primary" (click)="onMakeMushroom()">Создать еще грибок</button>
+    <div *ngIf="changesSaved" class="app--mushroom-card__wrapper">
+        <p class="app--mushroom-card__caption">Вы добавили чудесный грибок</p>
+        <div class="app--mushroom-card" (click)="onAddMushroom(mushroom)"
+            [ngStyle]="{'background-image': 'url(' + mushroom.imagePath + ')'}"
+            title="Положить в лукошко">
+            <p class="app--mushroom-card__name" title="{{ mushroom.name }}">{{ mushroom.name }}</p>
+        </div>
+        <button class="app--btn app--btn--primary" (click)="onMakeMushroom()">Добавить еще грибок</button>
     </div>
 </section>

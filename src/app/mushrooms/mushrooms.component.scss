@@ -9,13 +9,7 @@
     flex-wrap: wrap;
     margin-left: -$spacing-x;
     overflow: hidden;
-}
-
-.app--mushroom-card-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .app--mushroom-card {
@@ -35,7 +29,7 @@
 }
 
 .app--mushroom-card__name {
-    @include type-style('productive-heading-01');
+    @include type-style('productive-heading-02');
     margin: 180px 0 0 0;
     color: $text-01;
     overflow-wrap: break-word;

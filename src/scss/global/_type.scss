@@ -7,6 +7,12 @@ $productive-heading-01: (
     font-weight: 400
 ) !default;
 
+$productive-heading-02: (
+    font-family: 'Rubik Mono One',
+    font-size: rem(18px),
+    line-height: rem(24px),
+    font-weight: 400
+) !default;
 
 $heading-01: (
     font-family: 'Montserrat',
@@ -38,6 +44,7 @@ $helper-text: (
 
 $tokens: (
     productive-heading-01: $productive-heading-01,
+    productive-heading-02: $productive-heading-02,
     heading-01: $heading-01,
     label: $label,
     body: $body,

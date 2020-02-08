@@ -48,7 +48,7 @@
 
 .app--radio-button__appearance {
     cursor: pointer;
-    background-color: transparent;
+    background-color: $field;
     border-radius: 50%;
     border: 1px solid $ui-02;
     flex-shrink: 0;
@@ -85,4 +85,37 @@
 .app--selected-image {
     display: block;
     max-width: rem(250px);
+    margin: $spacing-xl 0;
+}
+
+.app--mushroom-card__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.app--mushroom-card__caption {
+    @include type-style('heading-01');
+}
+
+.app--mushroom-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing-2xl;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: auto;
+    height: auto;
+    height: rem(250px);
+    width: rem(250px);
+    margin-bottom: $spacing-xl;
+}
+
+.app--mushroom-card__name {
+    @include type-style('productive-heading-02');
+    margin: 180px 0 0 0;
+    color: $text-01;
+    overflow-wrap: break-word;
 }
