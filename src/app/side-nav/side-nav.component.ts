@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TriggerService } from '../header/trigger.service';
 import { Subscription } from 'rxjs';
+
+import { TriggerService } from '../header/trigger.service';
 
 @Component({
   selector: 'app-side-nav',

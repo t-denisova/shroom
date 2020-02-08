@@ -1,6 +1,6 @@
 
 @mixin button-base {
-    @include type-style('body');
+    @include type-style('body-01');
   
     cursor: pointer;
     display: inline-flex;
@@ -28,7 +28,7 @@
   border-color: $border-color;
   color: $font-color;
 
-  &:hover(:not(:disabled)) {
+  &:hover {
     background-color: $hover-bg-color;
   }
 
@@ -41,7 +41,8 @@
     background-color: $active-color;
   }
 
-  &:disabled {
+  &:disabled, &:disabled:hover {
+    background-color: $bg-color;
     opacity: .5;
     cursor: not-allowed;
   }

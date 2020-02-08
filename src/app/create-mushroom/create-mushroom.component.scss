@@ -38,7 +38,7 @@
 }
 
 .app--radio-button__label {
-    @include type-style('body');
+    @include type-style('body-01');
     cursor: pointer;
     display: flex;
     align-items: center;

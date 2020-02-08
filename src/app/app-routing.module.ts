@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   { path: 'login', component: AuthComponent },
   { path: 'signup', component: AuthComponent },
-  { path: 'not-found', component: PageNotFoundComponent }, //error?
+  { path: 'not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 ];
 

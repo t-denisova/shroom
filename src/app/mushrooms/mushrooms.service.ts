@@ -1,8 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Mushroom } from './mushroom.model';
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+
+import { Mushroom } from './mushroom.model';
 import { AuthService } from '../auth/auth.service';
 
 @Injectable()
@@ -13,15 +14,9 @@ export class MushroomsService {
 
     private shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
-    
-      // While there remain elements to shuffle...
       while (0 !== currentIndex) {
-    
-        // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-    
-        // And swap it with the current element.
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
@@ -36,7 +31,7 @@ export class MushroomsService {
             .post<{ name: string }>(
                 'https://shroom-265311.firebaseio.com/mushrooms.json',
                 mushroomData
-            ).subscribe(responseData => error => {
+            ).subscribe(() => error => {
               this.error.next(error.message);
             });
     }

@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+
 import { AddingService, MushroomData } from '../shared/adding.service';
 import { TriggerService } from '../header/trigger.service';
-import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 
 @Component({

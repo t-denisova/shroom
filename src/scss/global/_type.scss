@@ -35,10 +35,17 @@ $label: (
     font-weight: 400
 ) !default;
 
-$body: (
+$body-01: (
     font-family: 'Montserrat',
     font-size: rem(14px),
     line-height: rem(16px),
+    font-weight: 400
+) !default;
+
+$body-02: (
+    font-family: 'Montserrat',
+    font-size: rem(18px),
+    line-height: rem(24px),
     font-weight: 400
 ) !default;
 
@@ -55,7 +62,8 @@ $tokens: (
     productive-heading-03: $productive-heading-03,
     heading-01: $heading-01,
     label: $label,
-    body: $body,
+    body-01: $body-01,
+    body-02: $body-02,
     helper-text: $helper-text
 );
 

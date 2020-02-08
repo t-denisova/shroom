@@ -12,7 +12,6 @@ import { AddingService } from '../shared/adding.service';
 export class MushroomsComponent implements OnInit {
   classification: string;
   loadedMushrooms: Mushroom[] = [];
-  
   isFetching = false;
   error = null;
 
@@ -32,7 +31,7 @@ export class MushroomsComponent implements OnInit {
   }
 
   onAddMushroom(mushroom: Mushroom) {
-      this.addingSerice.addToBasket(mushroom);
+    this.addingSerice.addToBasket(mushroom);
   }
 
   onHandleError() {

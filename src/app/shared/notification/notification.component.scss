@@ -39,12 +39,12 @@
 }
 
 .app--inline-notification__title {
-    @include type-style('heading-01');
+    @include type-style('body-01');
     margin: 0 $spacing-x 0 0;
 }
 
 .app--inline-notification__subtitle {
-    @include type-style('body');
+    @include type-style('body-01');
     word-break: break-word;
     margin: 0;
 }
@@ -64,4 +64,4 @@
       outline: 2px solid $ui-03;
       outline-offset: -2px;
     }
-  }
+}

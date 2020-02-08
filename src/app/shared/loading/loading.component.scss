@@ -1,7 +1,6 @@
 @import '../../../scss/global/colors';
 @import '../../../scss/global/spacing';
 
-
 @mixin animation__loading--spin {
     animation-name: rotate;
     animation-duration: 690ms;
