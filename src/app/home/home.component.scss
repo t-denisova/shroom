@@ -2,17 +2,22 @@
 @import '../../scss/global/helper_mixins';
 @import '../../scss/global/type';
 @import '../../scss/global/spacing';
+@import '../../scss/global/colors';
 
 :host {
     display: flex;
     flex-direction: row;
-    align-items: flex-start; 
+    align-items: stretch;
+    height: calc(100vh - 80px);
+    padding-left: $spacing-7xl;
 }
 
 .app--home {
-    max-width: rem(400px);
+    width: rem(400px);
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .app--home__header {
@@ -24,23 +29,50 @@
     margin: 0 0 $spacing-4xl 0;
 }
 
-.app--home__info-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.app--home__credits {
+    margin-bottom: $spacing-6xl;
+    color: $text-05;
 }
 
-.app--home__credits {
-
+.app--home__credits > * {
+    margin: 0 0 $spacing-x 0;
 }
 
 .app--image {
-    position: absolute;
-    width: calc(100% - 400px);
-    left: 400px;
-    height: calc(100% - 80px);
+    flex-basis: 0;
+    flex-grow: 999;
     background-image: url('../../assets/all.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: rem(1200px);
     background-position: left center;
 }
+
+.app--link {
+    color: $text-05;
+    text-decoration: none;
+    outline: none;
+
+    &:hover {
+      color: $text-03;
+      text-decoration: underline;
+    }
+
+    &:active,
+    &:active:visited,
+    &:active:visited:hover {
+      color: $text-03;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      @include focus-outline;
+    }
+
+    &:visited {
+      color: $text-05;
+    }
+
+    &:visited:hover {
+      color: $text-05;
+    }
+  }

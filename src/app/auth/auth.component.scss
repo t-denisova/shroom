@@ -1,24 +1,25 @@
 @import '../../scss/global/helper_mixins';
 @import '../../scss/global/colors';
+@import '../../scss/global/spacing';
 
 :host {
     display: flex;
     flex-direction: row;
-    align-items: flex-start; 
+    align-items: stretch;
+    height: calc(100vh - 80px);
+    padding-left: $spacing-7xl;
 }
 
 .app--auth {
-    width: 100%;
-    max-width: rem(350px);
+    width: rem(400px);
+    flex-grow: 1;
 }
 
 .app--image {
-    position: absolute;
-    width: calc(100% - 400px);
-    left: 400px;
-    height: calc(100% - 80px);
+    flex-basis: 0;
+    flex-grow: 999;
     background-image: url('../../assets/all.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: rem(1200px);
     background-position: left center;
 }
