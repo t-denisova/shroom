@@ -37,6 +37,10 @@ export class PanelComponent implements OnInit, OnDestroy {
     });
   }
 
+  onCheck() {
+    this.addingService.chechIsAllEdible();
+  }
+
   ngOnDestroy(): void {
     this.toggleSub.unsubscribe();
     this.userSub.unsubscribe();

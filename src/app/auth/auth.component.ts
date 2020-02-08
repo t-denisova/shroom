@@ -43,7 +43,7 @@ export class AuthComponent implements OnInit {
 
       authObs.subscribe(responceData => {
         this.isLoading = false;
-        this.router.navigate(['']);
+        this.router.navigate(['/mushrooms']);
       }, errorMessage => {
         this.error = errorMessage;
         this.isLoading = false;

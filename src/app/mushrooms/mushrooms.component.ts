@@ -24,18 +24,13 @@ export class MushroomsComponent implements OnInit {
 
   ngOnInit() {
     this.isFetching = true;
-    this.route.params.subscribe(
-      (params: Params) => {
-        this.classification = params['classification'];
-        this.mushroomsService.fetchMushrooms(this.classification).subscribe(mushrooms => {
-          this.isFetching = false;
-          this.loadedMushrooms = mushrooms;
-        }, error => {
-          this.isFetching = false;
-          this.error = error.message;
-        });
-      }
-    );
+    this.mushroomsService.fetchMushrooms().subscribe(mushrooms => {
+      this.isFetching = false;
+      this.loadedMushrooms = mushrooms;
+    }, error => {
+      this.isFetching = false;
+      this.error = error.message;
+    });
   }
 
   onAddMushroom(mushroom: Mushroom) {

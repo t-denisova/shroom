@@ -1,6 +1,29 @@
-<section class="app--home">
+<section class="app--home"> 
+    <h1>
+        Добро пожаловать на полянку
+    </h1>
+    <p>
+        Собирайте грибы в лукошко, но будьте осторожны, некоторые могут оказаться ядовитыми!
+    </p>
+    <div class="app--btn--set">
+        <button
+            class="app--btn app--btn--primary"
+            
+            [routerLink]="['/signup']"
+            *ngIf="!isAuthenticated">
+            Я начинающий грибник
+        </button>
+        <button
+            class="app--btn app--btn--secondary"
+            [routerLink]="['/login']" 
+            *ngIf="!isAuthenticated">
+            Я бывалый грибник
+        </button>
+    </div>
     <p>Illustration by <a href="https://www.instagram.com/vika.kryu/" target="_blank">vika.kryu</a></p>
 </section>
+
+
 <div class="app--image"></div>
 
 <!-- directive appLink -->

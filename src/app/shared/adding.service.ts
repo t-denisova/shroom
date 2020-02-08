@@ -27,8 +27,16 @@ export class AddingService {
         }
     }
 
-     clearBasket() {
+    chechIsAllEdible() {
+        const inedible = this.addedMushrooms.find(o => o.mushroom.classification === 'inedible');
+        if (inedible === undefined) {
+            return true;
+        }
+        return false;
+    }
+
+    clearBasket() {
         this.addedMushrooms = [];
         this.mushroomChanged.emit(this.addedMushrooms.slice());
-     }
+    }
 }

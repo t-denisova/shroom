@@ -12,7 +12,7 @@ import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'mushrooms/:classification',
+    path: 'mushrooms',
     component: MushroomsComponent,
     canActivate: [AuthGuard]
   },

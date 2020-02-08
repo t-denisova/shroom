@@ -11,6 +11,25 @@ export class MushroomsService {
 
     constructor(private http: HttpClient, private authService: AuthService) {}
 
+    private shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+    
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+    
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+    
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+    
+      return array;
+    }
+
     createAndStoreMushroom(mushroomInfo: {classification: string, name: string, imagePath: string}) {
         const mushroomData: Mushroom = mushroomInfo;
         this.http
@@ -22,7 +41,7 @@ export class MushroomsService {
             });
     }
 
-    fetchMushrooms(filter: string) {
+    fetchMushrooms() {
       return this.http
       .get<{ [key: string]: Mushroom }>(
         'https://shroom-265311.firebaseio.com/mushrooms.json'
@@ -34,7 +53,7 @@ export class MushroomsService {
               mushroomsArray.push({...responseData[key], id: key});
             }
           }
-          return mushroomsArray.filter(m => m.classification === filter);;
+          return this.shuffle(mushroomsArray);
         })
       );
     }

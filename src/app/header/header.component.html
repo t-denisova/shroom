@@ -13,15 +13,9 @@
         <ul class="app--header__menu-bar">
             <li>
                 <a
-                    [routerLink]="['/mushrooms', 'edible']"
+                    [routerLink]="['/mushrooms']"
                     class="app--header__menu-item"
-                    >Съедобные грибы</a>
-            </li>
-            <li>
-                <a
-                    [routerLink]="['/mushrooms', 'inedible']"
-                    class="app--header__menu-item"
-                    >Несъедобные грибы</a>
+                    >Полянка</a>
             </li>
             <li>
                 <a
@@ -31,31 +25,15 @@
             </li>
         </ul>
     </nav>
-    <div class="app--header__actions">
+    <div class="app--header__actions" *ngIf="isAuthenticated">
         <button
             class="app--header__action"
-            [routerLink]="['/login']" 
-            *ngIf="!isAuthenticated"
-            title="Войти">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
-        </button>
-        <button
-            class="app--header__action"
-            [routerLink]="['/signup']"
-            *ngIf="!isAuthenticated"
-            title="Авторизоваться">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
-        </button>
-        <button
-            class="app--header__action"
-            *ngIf="isAuthenticated"
             (click)="onLogout()"
             title="Выйти">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9"/></svg>
         </button>
         <button
             class="app--header__action"
-            *ngIf="isAuthenticated"
             appSwitcher
             (click)="onTogglePanel()"
             title="Лукошко">

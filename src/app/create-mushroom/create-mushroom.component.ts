@@ -50,8 +50,6 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDe
     this.changesSaved = false;
   }
 
-  
-
   private showModal() {
     const modalCompFactory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
     const hostViewContainerRef = this.modalHost.viewContainerRef;

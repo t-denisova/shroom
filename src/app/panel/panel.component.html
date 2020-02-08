@@ -17,4 +17,11 @@
         </div>
         <p *ngIf="addedMushrooms.length < 1">Пусто</p>
     </section>
+    <div *ngIf="addedMushrooms.length > 0">
+        <p>Я думаю что собрал съедобные грибы</p>
+        <button (click)="onCheck()">Проверить</button>
+    </div>
+    <div *ngIf="isPoisoned">
+        <p>О нет вы отравились</p>
+    </div>
 </aside>
