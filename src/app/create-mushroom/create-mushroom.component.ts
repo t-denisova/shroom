@@ -50,26 +50,27 @@ export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDe
     this.changesSaved = false;
   }
 
+  
+
   private showModal() {
     const modalCompFactory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
     const hostViewContainerRef = this.modalHost.viewContainerRef;
     hostViewContainerRef.clear();
-    let comfirm: boolean;
     const modalRef = hostViewContainerRef.createComponent(modalCompFactory);
-    this.closeSub = modalRef.instance.close.subscribe(data => {
-      comfirm = data;
-      console.log(data, comfirm)
-      this.closeSub.unsubscribe();
-      hostViewContainerRef.clear();
+    return new Promise(resolve => {
+      this.closeSub = modalRef.instance.close.subscribe(data => {
+        this.closeSub.unsubscribe();
+        hostViewContainerRef.clear();
+        resolve(data);
+      });
     });
-    console.log(comfirm)
-    return comfirm;
   }
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-    if (!this.changesSaved) {
-      this.showModal();
-      //return true;
+    if (!this.changesSaved) { 
+      return this.showModal().then((data: boolean) => {
+        return data ? true : false; 
+      });
     } else {
       return true;
     }
