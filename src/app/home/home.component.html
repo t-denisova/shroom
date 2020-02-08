@@ -2,7 +2,7 @@
     <h1>
         Добро пожаловать на полянку
     </h1>
-    <p>
+    <p style="word-break: break-all;">
         Собирайте грибы в лукошко, но будьте осторожны, некоторые могут оказаться ядовитыми!
     </p>
     <div class="app--btn--set">
@@ -10,14 +10,12 @@
             class="app--btn app--btn--primary"
             
             [routerLink]="['/signup']"
-            *ngIf="!isAuthenticated">
-            Я начинающий грибник
+            *ngIf="!isAuthenticated">Я начинающий грибник
         </button>
         <button
             class="app--btn app--btn--secondary"
             [routerLink]="['/login']" 
-            *ngIf="!isAuthenticated">
-            Я бывалый грибник
+            *ngIf="!isAuthenticated">Я бывалый грибник
         </button>
     </div>
     <p>Illustration by <a href="https://www.instagram.com/vika.kryu/" target="_blank">vika.kryu</a></p>

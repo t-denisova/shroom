@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
   logingMode: string;
+  logingText: string;
   isLoading = false;
   error = null;
 
@@ -23,6 +24,12 @@ export class AuthComponent implements OnInit {
 
   ngOnInit() {
     this.logingMode = this.route.snapshot.routeConfig.path;
+    console.log(this.logingMode);
+    if (this.logingMode == "login") {
+      this.logingText = "Вход";
+    } else {
+      this.logingText = "Авторизайция"
+    }
   }
 
   onSubmit(form: NgForm) {
@@ -35,13 +42,13 @@ export class AuthComponent implements OnInit {
       let authObs: Observable<AuthResponceData>;
 
       this.isLoading = true;
-      if (this.logingMode == "login") {
+      if (this.logingMode == "login") { 
         authObs = this.authService.login(email, password);
       } else {
         authObs = this.authService.signup(email, password);
       }
 
-      authObs.subscribe(responceData => {
+      authObs.subscribe(() => {
         this.isLoading = false;
         this.router.navigate(['/mushrooms']);
       }, errorMessage => {

@@ -1,8 +1,7 @@
 <div class="app--mushrooms-list">
     <div *ngFor="let mushroom of loadedMushrooms">
         <div class="app--mushroom-card" (click)="onAddMushroom(mushroom)"
-            [ngStyle]="{'background-image': 'url(' + mushroom.imagePath + ')'}"
-            title="Положить в лукошко">
+            [ngStyle]="{'background-image': 'url(' + mushroom.imagePath + ')'}">
             <p class="app--mushroom-card__name" title="{{ mushroom.name }}">{{ mushroom.name }}</p>
         </div>
     </div>

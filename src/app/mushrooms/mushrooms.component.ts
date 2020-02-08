@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
 
 import { MushroomsService } from './mushrooms.service';
 import { Mushroom } from './mushroom.model';
@@ -18,7 +17,6 @@ export class MushroomsComponent implements OnInit {
   error = null;
 
   constructor(
-    private route: ActivatedRoute,
     private mushroomsService: MushroomsService,
     private addingSerice: AddingService) { }
 
@@ -34,7 +32,7 @@ export class MushroomsComponent implements OnInit {
   }
 
   onAddMushroom(mushroom: Mushroom) {
-    this.addingSerice.addToBasket(mushroom);
+      this.addingSerice.addToBasket(mushroom);
   }
 
   onHandleError() {

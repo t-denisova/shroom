@@ -13,6 +13,7 @@ export class PanelComponent implements OnInit, OnDestroy {
   addedMushrooms: MushroomData[] = [];
   expanded = false;
   isAuthenticated = false;
+  gameText = 'Я думаю, что собрал правильные грибы';
   private toggleSub: Subscription;
   private userSub: Subscription;
 
@@ -38,7 +39,18 @@ export class PanelComponent implements OnInit, OnDestroy {
   }
 
   onCheck() {
-    this.addingService.chechIsAllEdible();
+    const result = this.addingService.chechIsAllEdible();
+    console.log(result);
+    if (!result) {
+      this.gameText = 'О нет! Вы отравились'
+    } else {
+      this.gameText = 'Ура! Все грибы съедобные'
+    }
+  }
+
+  onRestart() {
+    this.addingService.clearBasket();
+    this.gameText = 'Я думаю, что собрал правильные грибы';
   }
 
   ngOnDestroy(): void {

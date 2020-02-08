@@ -12,6 +12,14 @@
     padding: $spacing-2xl;
     color: $inverse-content;
     z-index: z('header');
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.app--panel__wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .app--structured-list {
@@ -68,4 +76,8 @@
 
 .app--panel--hidden {
     display: none;
+}
+
+.app--panel__result {
+    margin-bottom: $spacing-3xl;
 }
