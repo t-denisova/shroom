@@ -10,8 +10,8 @@
   left: 0;
   width: rem(200px);
   max-width: rem(300px);
-  color: black;
-  background-color: white;
+  color: $text-01;
+  background-color: $background-01;
   will-change: width;
   // TODO: sync with motion work
   transition: width 0.11s cubic-bezier(0.2, 0, 1, 0.9);
@@ -55,7 +55,8 @@
 }
 
 .app--side-nav__link:hover {
-    background-color: gray;
+    background-color: $hover-inverse;
+    color: $inverse-content;
 }
 
 .app--side-nav__link:focus {
