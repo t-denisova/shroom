@@ -1,3 +1,8 @@
+
+@import '../../scss/global/helper_mixins';
+@import '../../scss/global/type';
+@import '../../scss/global/spacing';
+
 :host {
     display: flex;
     flex-direction: row;
@@ -5,7 +10,28 @@
 }
 
 .app--home {
-    max-width: rem(350px);
+    max-width: rem(400px);
+    display: flex;
+    flex-direction: column;
+}
+
+.app--home__header {
+    @include type-style('productive-heading-03');
+    margin: $spacing-5xl 0 $spacing-2xl 0;
+}
+
+.app--home__caption {
+    margin: 0 0 $spacing-4xl 0;
+}
+
+.app--home__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.app--home__credits {
+
 }
 
 .app--image {

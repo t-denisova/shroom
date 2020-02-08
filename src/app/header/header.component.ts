@@ -21,11 +21,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private triggerService: TriggerService,
     private addingService: AddingService) { }
 
-  onLogout() {
-    this.authService.logout();
-    this.addingService.clearBasket();
-  }
-
   onTogglePanel() {
     this.isOpenPanel = !this.isOpenPanel;
     this.triggerService.togglePanelEmitter.next(this.isOpenPanel);

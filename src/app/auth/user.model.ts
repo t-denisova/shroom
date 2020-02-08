@@ -1,3 +1,8 @@
+export enum Role {
+    User = 'User',
+    Admin = 'Admin'
+}
+
 export class User {
     constructor(
         public email: string,

@@ -1,24 +1,33 @@
 <section class="app--home"> 
-    <h1>
-        Добро пожаловать на полянку
-    </h1>
-    <p style="word-break: break-all;">
-        Собирайте грибы в лукошко, но будьте осторожны, некоторые могут оказаться ядовитыми!
-    </p>
-    <div class="app--btn--set">
-        <button
-            class="app--btn app--btn--primary"
-            
-            [routerLink]="['/signup']"
-            *ngIf="!isAuthenticated">Я начинающий грибник
-        </button>
-        <button
-            class="app--btn app--btn--secondary"
-            [routerLink]="['/login']" 
-            *ngIf="!isAuthenticated">Я бывалый грибник
-        </button>
+    <div class="app--home__info-wrapper">
+        <h1 class="app--home__header">
+            Добро пожаловать на полянку
+        </h1>
+        <p class="app--home__caption">
+            Собирайте грибы в лукошко, но будьте осторожны, некоторые могут оказаться ядовитыми!
+        </p>
+        <div class="app--btn--set">
+            <button
+                class="app--btn app--btn--primary"
+                [routerLink]="['/signup']"
+                *ngIf="!isAuthenticated">Я начинающий грибник
+            </button>
+            <button
+                class="app--btn app--btn--secondary"
+                [routerLink]="['/login']" 
+                *ngIf="!isAuthenticated">Я бывалый грибник
+            </button>
+            <button
+                class="app--btn app--btn--secondary"
+                (click)="onLogout()"
+                *ngIf="isAuthenticated">Выйти
+            </button>
+        </div>
     </div>
-    <p>Illustration by <a href="https://www.instagram.com/vika.kryu/" target="_blank">vika.kryu</a></p>
+    <div class="app--home__credits">
+        <p>Код <a href="https://github.com/t-denisova" target="_blank">Таня Денисова</a></p>
+        <p>Иллюстрации <a href="https://www.instagram.com/vika.kryu/" target="_blank">Вика коючкина</a></p>
+    </div>
 </section>
 
 
