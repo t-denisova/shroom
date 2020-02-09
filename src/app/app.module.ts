@@ -7,13 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { CreateMushroomComponent } from './create-mushroom/create-mushroom.component';
+import { AddMushroomComponent } from './mushrooms/add-mushroom/add-mushroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { CanDeactivateGuard } from './create-mushroom/can-deactivate-guard.service';
 import { MushroomsComponent } from './mushrooms/mushrooms.component';
-import { MushroomsService } from './mushrooms/mushrooms.service';
 import { AuthComponent } from './auth/auth.component';
-import { AuthService } from './auth/auth.service';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { AuthInterceptorService } from './auth/auth-interseptor.service';
 import { PanelComponent } from './panel/panel.component';
@@ -21,14 +18,14 @@ import { SwitcherDirective } from './header/switcher.directive';
 import { NotificationComponent } from './shared/notification/notification.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ModalComponent } from './modal/modal.component';
-import { PlaceholderDirective } from './create-mushroom/placeholder.directive';
+import { PlaceholderDirective } from './mushrooms/add-mushroom/placeholder.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    CreateMushroomComponent,
+    AddMushroomComponent,
     PageNotFoundComponent,
     MushroomsComponent,
     AuthComponent,
@@ -47,9 +44,6 @@ import { PlaceholderDirective } from './create-mushroom/placeholder.directive';
     HttpClientModule
   ],
   providers: [
-      AuthService,
-      CanDeactivateGuard,
-      MushroomsService,
       {
         provide: HTTP_INTERCEPTORS,
         useClass: AuthInterceptorService,

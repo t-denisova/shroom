@@ -3,17 +3,17 @@ import { Observable, Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
 
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
-import { MushroomsService } from '../mushrooms/mushrooms.service';
+import { MushroomsService } from '../mushrooms.service';
 import { PlaceholderDirective } from './placeholder.directive';
-import { Mushroom } from '../mushrooms/mushroom.model';
-import { ModalComponent } from '../modal/modal.component';
+import { Mushroom } from '../mushroom.model';
+import { ModalComponent } from '../../modal/modal.component';
 
 @Component({
-  selector: 'app-create-mushroom',
-  templateUrl: './create-mushroom.component.html',
-  styleUrls: ['./create-mushroom.component.scss']
+  selector: 'app-add-mushroom',
+  templateUrl: './add-mushroom.component.html',
+  styleUrls: ['./add-mushroom.component.scss']
 })
-export class CreateMushroomComponent implements OnInit, CanDeactivateGuard, OnDestroy {
+export class AddMushroomComponent implements OnInit, CanDeactivateGuard, OnDestroy {
   @ViewChild('f', {static: false}) createMushroomForm: NgForm;
   @ViewChild(PlaceholderDirective, {static:false}) modalHost: PlaceholderDirective;
 

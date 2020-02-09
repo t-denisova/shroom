@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 import { Mushroom } from './mushroom.model';
 import { AuthService } from '../auth/auth.service';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class MushroomsService {
     error = new Subject<string>();
 

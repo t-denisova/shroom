@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MushroomsComponent } from './mushrooms/mushrooms.component';
-import { CreateMushroomComponent } from './create-mushroom/create-mushroom.component';
+import { AddMushroomComponent } from './mushrooms/add-mushroom/add-mushroom.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { CanDeactivateGuard } from './create-mushroom/can-deactivate-guard.service';
+import { CanDeactivateGuard } from './mushrooms/add-mushroom/can-deactivate-guard.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth/auth.guard';
 
@@ -17,8 +17,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { 
-    path: 'create-mushroom',
-    component: CreateMushroomComponent,
+    path: 'add-mushroom',
+    component: AddMushroomComponent,
     canDeactivate: [CanDeactivateGuard],
     canActivate: [AuthGuard]
   },
