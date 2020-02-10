@@ -2,6 +2,7 @@
     *ngIf="isAuthenticated"
     class="app--panel"
     [ngClass]="{'app--panel--hidden': !expanded}">
+    <div class="app--panel__wrapper">
         <section  class="app--structured-list">
             <div class="app--structured-list-thead">
                 <div class="app--structured-list-row app--structured-list-row--header-row">
@@ -15,13 +16,14 @@
                     <div class="app--structured-list-td app--structured-list-content--right">{{ mushroom.amount }}</div>
                 </div> 
             </div>
-            <p *ngIf="addedMushrooms.length < 1">Пусто</p>
+            <p class="app--structured-list__empty" *ngIf="addedMushrooms.length < 1">Пусто</p>
         </section>
-        <div class="app--panel__result" *ngIf="addedMushrooms.length > 0">
+        <div class="app--panel__footer" *ngIf="addedMushrooms.length > 0">
             <p>{{ gameText }}</p>
             <div class="app--btn--set">
                 <button class="app--btn app--btn--primary" (click)="onCheck()">Проверить</button>
                 <button class="app--btn app--btn--secondary" (click)="onRestart()">Начать заново</button>
             </div>
         </div>
+    </div>
 </aside>

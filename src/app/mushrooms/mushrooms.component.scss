@@ -2,6 +2,7 @@
 @import '../../scss/global/colors';
 @import '../../scss/global/layout';
 @import '../../scss/global/type';
+@import '../../scss/global/motion';
 
 .app--mushrooms-list {
     display: flex;
@@ -10,6 +11,7 @@
     margin-left: -$spacing-x;
     overflow: hidden;
     justify-content: space-around;
+    margin: $spacing-4xl;
 }
 
 .app--mushroom-card {
@@ -24,7 +26,6 @@
     height: auto;
     height: rem(250px);
     width: rem(250px);
-    background-color: transparent;
     cursor: pointer;	
 }
 
@@ -33,6 +34,7 @@
     margin: 180px 0 0 0;
     color: $text-01;
     overflow-wrap: break-word;
+    transition: color $duration--fast $motion--ease-out;
 }
 
 .app--mushroom-card:hover .app--mushroom-card__name {

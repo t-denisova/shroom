@@ -6,7 +6,7 @@
         [subtitle]="error"
         (click)="onHandleError()">
     </app-notification>
-    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" class="app--form">
         <div class="app--form-item">
             <label for="email" class="app--label">Логин</label>
             <input
@@ -35,7 +35,7 @@
                     *ngIf="!userPassword.valid && userPassword.touched"
                     class="app--form-requirement">Введите пароль из не менее 6 знаков</span>
         </div>
-        <div>
+        <div class="app--form-item">
             <button
                 class="app--btn app--btn--primary"
                 type="submit"

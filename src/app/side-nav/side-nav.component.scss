@@ -2,23 +2,22 @@
 @import '../../scss/global/helper_mixins';
 @import '../../scss/global/colors';
 @import '../../scss/global/layout';
+@import '../../scss/global/motion';
 
 .app--side-nav {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: rem(200px);
-  max-width: rem(300px);
-  color: $text-01;
-  background-color: $background-01;
-  will-change: width;
-  // TODO: sync with motion work
-  transition: width 0.11s cubic-bezier(0.2, 0, 1, 0.9);
-  top: $spacing-5xl;
-  overflow: hidden;
-  z-index: z('header');
-  display: none;
+    position: fixed;
+    top: $spacing-5xl;
+    bottom: 0;
+    left: 0;
+    width: rem(200px);
+    max-width: rem(300px);
+    color: $text-01;
+    background-color: $background-01;
+    will-change: width;
+    transition: width $duration--fast $motion--standard-easing;
+    overflow: hidden;
+    z-index: z('header');
+    display: none;
 }
 
 .app--side-nav__navigation {

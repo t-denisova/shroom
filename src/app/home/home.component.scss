@@ -2,12 +2,13 @@
 @import '../../scss/global/type';
 @import '../../scss/global/spacing';
 @import '../../scss/global/colors';
+@import '../../scss/global/motion';
 
 :host {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 48px);
     padding-left: $spacing-7xl;
 }
 
@@ -17,6 +18,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.app--home__info-wrapper {
+    margin-top: $spacing-4xl;
 }
 
 .app--home__header {
@@ -30,7 +35,6 @@
 }
 
 .app--home__credits {
-    margin-bottom: $spacing-6xl;
     color: $text-05;
 }
 
@@ -43,14 +47,15 @@
     flex-grow: 999;
     background-image: url('../../assets/all.png');
     background-repeat: no-repeat;
-    background-size: rem(1200px);
-    background-position: left center;
+    background-size: rem(1100px);
+    background-position: left bottom;
 }
 
 .app--link {
     color: $text-05;
     text-decoration: none;
     outline: none;
+    transition: $duration--fast $motion--standard-easing;
 
     &:hover {
         color: $text-03;

@@ -6,13 +6,14 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 48px);
     padding-left: $spacing-7xl;
 }
 
 .app--auth {
     width: rem(400px);
     flex-grow: 1;
+    margin-top: $spacing-4xl;
 }
 
 .app--image {
@@ -20,6 +21,6 @@
     flex-grow: 999;
     background-image: url('../../assets/all.png');
     background-repeat: no-repeat;
-    background-size: rem(1200px);
-    background-position: left center;
+    background-size: rem(1100px);
+    background-position: left bottom;
 }

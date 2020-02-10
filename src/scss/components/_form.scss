@@ -1,14 +1,14 @@
-.app--fieldset {
-    border: none;
-    margin: 0;
-    padding: 0;
-    margin-bottom: $spacing-2xl;
+
+
+.app--form > * + * {
+     margin-top: $spacing-3xl;
+     align-items: flex-start;
 }
 
 .app--form-item {
     display: flex;
     flex-direction: column;
-    margin-bottom: $spacing-2xl;
+    justify-content: flex-start;
 }
 
 input.ng-invalid.ng-touched {

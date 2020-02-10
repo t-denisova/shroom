@@ -9,11 +9,12 @@
 .app--text-input {
     padding: 0 $spacing-x;
     width: 100%;
-    max-width: rem(350px);
     height: $spacing-5xl;
     background-color: $field;
     color: $text-01;
     border: none;
+    border-bottom: 1px solid $ui-03;
+    transition: outline $duration--fast $motion--standard-easing;
 
     &:focus,
     &:active {

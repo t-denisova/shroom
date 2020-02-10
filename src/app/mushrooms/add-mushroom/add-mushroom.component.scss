@@ -7,11 +7,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: $spacing-2xl;
 }
 
 .app--create-mushroom {
+    margin-top: $spacing-4xl;
     width: 100%;
-    max-width: rem(350px);
+    max-width: rem(400px);
+}
+
+.app--fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
 }
 
 .app--radio-button {
@@ -85,7 +93,6 @@
 .app--selected-image {
     display: block;
     max-width: rem(250px);
-    margin: $spacing-xl 0;
 }
 
 .app--mushroom-card__wrapper {
@@ -110,7 +117,7 @@
     height: auto;
     height: rem(250px);
     width: rem(250px);
-    margin-bottom: $spacing-xl;
+    margin: $spacing-2xl 0;
 }
 
 .app--mushroom-card__name {

@@ -1,6 +1,6 @@
 <ng-template appPlaceholder></ng-template>
 <section class="app--create-mushroom">
-    <form *ngIf="!changesSaved" (ngSubmit)="onSaveMushroom(f)" #f="ngForm"> 
+    <form *ngIf="!changesSaved" (ngSubmit)="onSaveMushroom(f)" #f="ngForm" class="app--form"> 
         <fieldset class="app--fieldset">
             <legend class="app--label">Тип грибка</legend>
             <div class="app--radio-button-group">
@@ -58,9 +58,11 @@
             <span
                 *ngIf="!mushroomImage.valid && mushroomImage.touched"
                 class="app--form-requirement">Добавьте картинку</span>
+        </div>
+        <img *ngIf="mushroomImage.valid" src="{{ imagePath }}" class="app--selected-image">
+        <div class="app--form-item">
+            <button class="app--btn app--btn--primary" type="submit" [disabled] = "!f.valid">Сохранить грибок</button>
         </div> 
-        <img src="{{ imagePath }}" class="app--selected-image">
-        <button class="app--btn app--btn--primary" type="submit" [disabled] = "!f.valid">Сохранить грибок</button>
     </form>
     <app-notification
         *ngIf="error"

@@ -1,5 +1,7 @@
 @import '../scss/global/spacing';
 
 .app--content {
-    padding: $spacing-10xl 0 0 0;
+    position: relative;
+    margin-top: $spacing-5xl;
+    min-height: calc(100vh - 48px);
 }

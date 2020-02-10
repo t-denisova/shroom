@@ -1,6 +1,7 @@
 @import '../../scss/global/spacing';
 @import '../../scss/global/colors';
 @import '../../scss/global/layout';
+@import '../../scss/global/motion';
 
 .app--panel {
     position: fixed;
@@ -12,25 +13,26 @@
     padding: $spacing-2xl;
     color: $inverse-content;
     z-index: z('header');
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    overflow: auto;
+    will-change: width;
+    transition: width 1000ms $motion--standard-easing;
 }
 
 .app--panel__wrapper {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .app--structured-list {
     display: table;
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
     margin-bottom: 5rem;
+    width: 100%;
     background-color: transparent;
+    overflow-y: auto;
+    padding: $spacing-2xl 0 0;
 }
 
 .app--structured-list-row {
@@ -63,11 +65,15 @@
 
 .app--structured-list-td,
 .app--structured-list-th {
-    padding: $spacing-x 0 $spacing-x 0;
+    padding: $spacing-x 0;
 }
 
 .app--structured-list-content--right {
     text-align: right;
+}
+
+.app--structured-list__empty {
+    margin: $spacing-x 0;
 }
 
 .app--panel--expanded {
@@ -78,6 +84,8 @@
     display: none;
 }
 
-.app--panel__result {
-    margin-bottom: $spacing-3xl;
+.app--panel__footer {
+    // margin-bottom: $spacing-3xl;
+    flex: 0 0 auto;
+    width: 100%;
 }
