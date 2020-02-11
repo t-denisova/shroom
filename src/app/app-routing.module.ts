@@ -6,7 +6,6 @@ import { AddMushroomComponent } from './mushrooms/add-mushroom/add-mushroom.comp
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CanDeactivateGuard } from './mushrooms/add-mushroom/can-deactivate-guard.service';
-import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
@@ -22,8 +21,7 @@ const routes: Routes = [
     canDeactivate: [CanDeactivateGuard],
     canActivate: [AuthGuard]
   },
-  { path: 'login', component: AuthComponent },
-  { path: 'signup', component: AuthComponent },
+
   { path: 'not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 ];

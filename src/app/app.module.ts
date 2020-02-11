@@ -10,15 +10,14 @@ import { HomeComponent } from './home/home.component';
 import { AddMushroomComponent } from './mushrooms/add-mushroom/add-mushroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MushroomsComponent } from './mushrooms/mushrooms.component';
-import { AuthComponent } from './auth/auth.component';
-import { LoadingComponent } from './shared/loading/loading.component';
 import { AuthInterceptorService } from './auth/auth-interseptor.service';
 import { PanelComponent } from './panel/panel.component';
 import { SwitcherDirective } from './header/switcher.directive';
-import { NotificationComponent } from './shared/notification/notification.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ModalComponent } from './modal/modal.component';
 import { PlaceholderDirective } from './mushrooms/add-mushroom/placeholder.directive';
+import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,11 +27,8 @@ import { PlaceholderDirective } from './mushrooms/add-mushroom/placeholder.direc
     AddMushroomComponent,
     PageNotFoundComponent,
     MushroomsComponent,
-    AuthComponent,
-    LoadingComponent,
     PanelComponent,
     SwitcherDirective,
-    NotificationComponent,
     SideNavComponent,
     ModalComponent,
     PlaceholderDirective
@@ -41,7 +37,9 @@ import { PlaceholderDirective } from './mushrooms/add-mushroom/placeholder.direc
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule,
+    SharedModule
   ],
   providers: [
       {
