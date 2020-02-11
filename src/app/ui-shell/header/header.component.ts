@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { AuthService } from '../auth/auth.service';
-import { TriggerService } from './trigger.service';
-import { AddingService, MushroomData } from '../shared/adding.service';
+import { AuthService } from '../../auth/auth.service';
+import { TriggerService } from '../trigger.service';
+import { AddingService, MushroomData } from '../../shared/adding.service';
 
 @Component({
   selector: 'app-header',

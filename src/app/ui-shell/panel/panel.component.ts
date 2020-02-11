@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { AddingService, MushroomData } from '../shared/adding.service';
-import { TriggerService } from '../header/trigger.service';
-import { AuthService } from '../auth/auth.service';
+import { AddingService, MushroomData } from '../../shared/adding.service';
+import { TriggerService } from '../trigger.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-panel',

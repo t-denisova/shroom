@@ -6,7 +6,7 @@ import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { MushroomsService } from '../mushrooms.service';
 import { PlaceholderDirective } from './placeholder.directive';
 import { Mushroom } from '../mushroom.model';
-import { ModalComponent } from '../../modal/modal.component';
+import { ModalComponent } from '../../shared/modal/modal.component';
 
 @Component({
   selector: 'app-add-mushroom',

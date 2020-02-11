@@ -5,32 +5,23 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AddMushroomComponent } from './mushrooms/add-mushroom/add-mushroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MushroomsComponent } from './mushrooms/mushrooms.component';
 import { AuthInterceptorService } from './auth/auth-interseptor.service';
-import { PanelComponent } from './panel/panel.component';
-import { SwitcherDirective } from './header/switcher.directive';
-import { SideNavComponent } from './side-nav/side-nav.component';
-import { ModalComponent } from './modal/modal.component';
 import { PlaceholderDirective } from './mushrooms/add-mushroom/placeholder.directive';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { UIShellModule } from './ui-shell/ui-shell.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     HomeComponent,
     AddMushroomComponent,
     PageNotFoundComponent,
     MushroomsComponent,
-    PanelComponent,
-    SwitcherDirective,
-    SideNavComponent,
-    ModalComponent,
     PlaceholderDirective
   ],
   imports: [
@@ -38,6 +29,7 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     AuthModule,
     SharedModule,
+    UIShellModule,
     AppRoutingModule,
     HttpClientModule
   ],
@@ -48,9 +40,6 @@ import { SharedModule } from './shared/shared.module';
         multi: true
       }
   ],
-  bootstrap: [AppComponent],
-  entryComponents: [
-    ModalComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
