@@ -6,14 +6,15 @@
 
 :host {
     display: flex;
-    flex-direction: row;
     align-items: stretch;
+    flex-wrap: wrap;
     height: calc(100vh - 48px);
-    padding-left: $spacing-7xl;
+    margin-left: $spacing-7xl;
 }
 
 .app--home {
-    width: rem(400px);
+    width: 100%;
+    max-width: rem(400px);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -79,5 +80,26 @@
 
     &:visited:hover {
         color: $text-03;
+    }
+}
+
+
+@media (max-width: 42rem) {
+    :host {
+        margin: 0 $spacing-3xl;
+    }
+
+    .app--home__header {
+        @include type-style('productive-heading-04');
+    }
+
+    .app--btn--set {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .app--btn--set .app--btn + .app--btn {
+        margin: $spacing-x 0 0 0;
     }
 }
