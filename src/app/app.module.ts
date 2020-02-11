@@ -6,23 +6,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AddMushroomComponent } from './mushrooms/add-mushroom/add-mushroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { MushroomsComponent } from './mushrooms/mushrooms.component';
 import { AuthInterceptorService } from './auth/auth-interseptor.service';
-import { PlaceholderDirective } from './mushrooms/add-mushroom/placeholder.directive';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { UIShellModule } from './ui-shell/ui-shell.module';
+import { MushroomsModule } from './mushrooms/mushroom.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AddMushroomComponent,
-    PageNotFoundComponent,
-    MushroomsComponent,
-    PlaceholderDirective
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +25,7 @@ import { UIShellModule } from './ui-shell/ui-shell.module';
     AuthModule,
     SharedModule,
     UIShellModule,
+    MushroomsModule,
     AppRoutingModule,
     HttpClientModule
   ],
