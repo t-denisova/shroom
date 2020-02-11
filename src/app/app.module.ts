@@ -36,10 +36,10 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
     AuthModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
       {

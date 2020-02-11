@@ -22,7 +22,7 @@
 }
 
 .app--home__info-wrapper {
-    margin-top: $spacing-4xl;
+    margin: $spacing-4xl $spacing-3xl 0 0;
 }
 
 .app--home__header {
@@ -48,7 +48,7 @@
     flex-grow: 999;
     background-image: url('../../assets/all.png');
     background-repeat: no-repeat;
-    background-size: rem(1100px);
+    background-size: rem(1050px);
     background-position: left bottom;
 }
 
