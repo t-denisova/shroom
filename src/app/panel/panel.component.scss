@@ -13,30 +13,26 @@
     padding: $spacing-2xl;
     color: $inverse-content;
     z-index: z('header');
-    overflow: auto;
     will-change: width;
-    transition: width 1000ms $motion--standard-easing;
+    transition: width $duration--fast $motion--standard-easing;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - $spacing-5xl);
 }
 
 .app--panel__wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-.app--structured-list {
-    display: table;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-bottom: 5rem;
-    width: 100%;
-    background-color: transparent;
-    overflow-y: auto;
-    padding: $spacing-2xl 0 0;
+    position: relative;
 }
 
 .app--structured-list-row {
-    display: table-row;
+    display: block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .app--structured-list-thead {
@@ -55,6 +51,7 @@
 .app--structured-list-tbody {
     display: table-row-group;
     vertical-align: middle;
+    overflow: hidden auto;
 }
 
 .app--structured-list-td {
@@ -81,11 +78,13 @@
 }
 
 .app--panel--hidden {
-    display: none;
+    @include hidden;
 }
 
 .app--panel__footer {
-    // margin-bottom: $spacing-3xl;
+    display: block;
     flex: 0 0 auto;
-    width: 100%;
+    margin-top: auto;
+    padding: $spacing-x 0 $spacing-xs 0;
+    border-top: 1px solid $ui-04;
 }

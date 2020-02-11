@@ -3,7 +3,6 @@
     class="app--panel"
     [ngClass]="{'app--panel--hidden': !expanded}">
     <div class="app--panel__wrapper">
-        <section  class="app--structured-list">
             <div class="app--structured-list-thead">
                 <div class="app--structured-list-row app--structured-list-row--header-row">
                     <div class="app--structured-list-th">Выбранные грибки</div>
@@ -17,7 +16,6 @@
                 </div> 
             </div>
             <p class="app--structured-list__empty" *ngIf="addedMushrooms.length < 1">Пусто</p>
-        </section>
         <div class="app--panel__footer" *ngIf="addedMushrooms.length > 0">
             <p>{{ gameText }}</p>
             <div class="app--btn--set">

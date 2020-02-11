@@ -71,20 +71,19 @@
 .app--header__actions {
     display: flex;
     justify-content: flex-end;
-    flex: 1 1 0%;
+    flex: 1;
     height: 100%;
 }
 
 .app--header__action {
-    position: relative;
-    height: $spacing-5xl;
-    border: 2px solid transparent;
     background-color: transparent;
+    padding: 0;
+    background-color: transparent;
+    border: 2px solid transparent;
     color: $inverse-content;
     width: rem(40px);
+    height: rem(40px);
     cursor: pointer;
-    display: flex;
-    align-items: center;
     border-left: 1px solid transparent;
     transition: all $duration--fast $motion--ease-out;
 }
