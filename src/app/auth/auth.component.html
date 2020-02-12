@@ -11,26 +11,26 @@
             <label for="email" class="app--label">Логин</label>
             <input
                 type="email"
-                id="login"
-                [(ngModel)]="login"
-                #userEmail = "ngModel"
-                name="email"
+                id="email"
                 class="app--text-input"
+                ngModel
+                name="email"
+                required
                 email
-                required>
+                #userEmail = "ngModel">
                 <span *ngIf="!userEmail.valid && userEmail.touched" class="app--form-requirement">Введите корректный email</span>
         </div>
         <div class="app--form-item">
             <label for="password" class="app--label">Пароль</label>
             <input
-                class="app--text-input"
                 type="password"
                 id="password"
-                [(ngModel)]="password"
-                #userPassword = "ngModel"
+                class="app--text-input"
+                ngModel
                 name="password"
                 required
-                minlength="6">
+                minlength="6"
+                #userPassword = "ngModel">
                 <span
                     *ngIf="!userPassword.valid && userPassword.touched"
                     class="app--form-requirement">Введите пароль из не менее 6 знаков</span>

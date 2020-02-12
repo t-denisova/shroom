@@ -9,7 +9,7 @@
                         id="radio-button-lm5n7wbo8g-1"
                         class="app--radio-button"
                         type="radio"
-                        [(ngModel)]="classification"
+                        ngModel
                         name="classification"
                         value="edible"
                         required>
@@ -21,7 +21,7 @@
                         id="radio-button-lm5n7wbo8g-2"
                         class="app--radio-button"
                         type="radio"
-                        [(ngModel)]="classification"
+                        ngModel
                         name="classification"
                         value="inedible"
                         required>
@@ -35,7 +35,7 @@
             <input
                 type="text"
                 id="name"
-                [(ngModel)]="name"
+                ngModel
                 name="name"
                 required
                 #mushroomName="ngModel"
@@ -59,7 +59,6 @@
                 *ngIf="!mushroomImage.valid && mushroomImage.touched"
                 class="app--form-requirement">Добавьте картинку</span>
         </div>
-        <img *ngIf="mushroomImage.valid" src="{{ imagePath }}" class="app--selected-image">
         <div class="app--form-item">
             <button class="app--btn app--btn--primary" type="submit" [disabled] = "!f.valid">Сохранить грибок</button>
         </div> 
@@ -73,7 +72,7 @@
 
     <div *ngIf="changesSaved" class="app--mushroom-card__wrapper">
         <p class="app--mushroom-card__caption">Вы добавили чудесный грибок</p>
-        <div class="app--mushroom-card" (click)="onAddMushroom(mushroom)"
+        <div class="app--mushroom-card"
             [ngStyle]="{'background-image': 'url(' + mushroom.imagePath + ')'}"
             title="Положить в лукошко">
             <p class="app--mushroom-card__name" title="{{ mushroom.name }}">{{ mushroom.name }}</p>
